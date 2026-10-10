@@ -26,7 +26,7 @@ table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}th{backgr
 .task{border:1px solid #dce6df;border-radius:14px;padding:18px;margin:16px 0}
 .taskhead{display:flex;gap:10px;align-items:center;margin-bottom:8px}.num{background:var(--green);color:white;border-radius:8px;padding:4px 9px;font:700 13px Arial,sans-serif}
 button{background:var(--green);color:white;border:0;border-radius:8px;padding:10px 15px;font:700 14px Arial,sans-serif;cursor:pointer;margin:7px 4px 3px 0}
-button.secondary{background:#e6f2eb;color:var(--green);border:1px solid #bad9c6} button:disabled{opacity:.55;cursor:not-allowed}
+button.secondary{background:#e6f2eb;color:var(--green);border:1px solid #bad9c6}
 select,input[type=text],textarea{font:16px Georgia,serif;padding:9px;border:1px solid #b9c9bf;border-radius:7px;background:white;max-width:100%}
 label{display:block;margin:10px 0}.feedback{font:14px Arial,sans-serif;padding:10px;border-radius:8px;margin-top:10px;display:none}.correct{display:block;background:#e3f5e9;color:#155c38}.incorrect{display:block;background:#fff1dc;color:#795015}
 .small{font:13px/1.5 Arial,sans-serif;color:var(--muted)}.answer{display:none;background:#f3f7f4;border-radius:8px;padding:12px;margin-top:10px}
@@ -42,7 +42,7 @@ footer{text-align:center;color:var(--muted);font:12px Arial,sans-serif;padding:2
 <div class="meta"><span class="pill">Level B2</span><span class="pill">80 minutes</span><span class="pill">Lexical Approach</span><span class="pill">Self-check activities</span></div>
 </div></header>
 <nav>
-<a href="#goals">Goals</a><a href="#chunks">Collocation bank</a><a href="#reading">Read & notice</a><a href="#tasks">Practice</a><a href="#skell">SkELL lab</a><a href="#use">Use it</a><a href="#answers">Answer key</a>
+<a href="#goals">Goals</a><a href="#chunks">Collocation bank</a><a href="#reading">Read & notice</a><a href="#tasks">Practice</a><a href="#skell">SkELL lab</a><a href="#use">Use it</a>
 </nav>
 <main>
 <section id="goals">
@@ -139,17 +139,7 @@ footer{text-align:center;color:var(--muted);font:12px Arial,sans-serif;padding:2
 <div class="callout"><b>Exit ticket:</b> Write one collocation you learned, one combination you had to correct, and one original sentence.</div>
 </section>
 
-<section id="answers">
-<h2>7. Answer key</h2>
-<button class="secondary" id="answerUnlockButton" onclick="toggleAnswers()" disabled>Complete and check all five tasks to unlock answers</button>
-<div class="answer" id="answerBox">
-<p><b>Task 1 — Matching</b><br>make → progress; meet → a deadline; conduct → research; draw → a conclusion; broaden → your knowledge; gain → insight into; pay → attention to; pose → a challenge.</p>
-<p><b>Task 2 — Completion</b><br>1 deadline; 2 research; 3 conclusion; 4 progress; 5 insight; 6 workload; 7 engaged; 8 effective.</p>
-<p><b>Task 3 — Odd One Out</b><br>a homework → do homework / complete an assignment; a progress → make progress; a conclusion after conduct → draw/reach a conclusion; heavy knowledge → broad/deep knowledge; a deadline after draw → meet a deadline; a research → conduct/do research.</p>
-<p><b>Task 4 — Categories</b><br>Planning and deadlines: meet a deadline, make progress, heavy workload. Research and reasoning: conduct research, draw a conclusion, gain insight into. Engagement and attention: pay attention to, deeply engaged, broaden your knowledge.</p>
-<p><b>Task 5 — Sequence</b><br>Suggested order: B → C → A → D → E. A different order may be reasonable if explained, but the auto-check key uses this order.</p>
-</div>
-</section>
+
 <footer>Digital lesson • Academic Success: Learning in Collocations • Designed for B2 English philology students</footer>
 </main>
 <script>
@@ -204,27 +194,14 @@ function build(){
  sortItems.forEach((it,i)=>{let l=el("label",{},it[0]+" ");let s=el("select",{id:"s"+i});s.appendChild(el("option",{value:""},"Choose category…"));it[2].forEach(v=>s.appendChild(el("option",{value:v},v)));l.appendChild(s);so.appendChild(l)});
 }
 function feedback(id,msg,ok){let e=document.getElementById(id);e.textContent=msg;e.className="feedback "+(ok?"correct":"incorrect")}
-function checkMatching(){let n=0;matchItems.forEach((it,i)=>{if(document.getElementById("m"+i).value==it[2])n++});feedback("matchFeedback",n+" / "+matchItems.length+" correct.",n===matchItems.length);markTaskChecked("matching")}
+function checkMatching(){let n=0;matchItems.forEach((it,i)=>{if(document.getElementById("m"+i).value==it[2])n++});feedback("matchFeedback",n+" / "+matchItems.length+" correct.",n===matchItems.length)}
 function resetMatching(){matchItems.forEach((_,i)=>document.getElementById("m"+i).value="");document.getElementById("matchFeedback").className="feedback"}
-function checkGaps(){let n=0;gapItems.forEach((it,i)=>{if(document.getElementById("g"+i).value==it[2])n++});feedback("gapFeedback",n+" / "+gapItems.length+" correct.",n===gapItems.length);markTaskChecked("gaps")}
+function checkGaps(){let n=0;gapItems.forEach((it,i)=>{if(document.getElementById("g"+i).value==it[2])n++});feedback("gapFeedback",n+" / "+gapItems.length+" correct.",n===gapItems.length)}
 function resetGaps(){gapItems.forEach((_,i)=>document.getElementById("g"+i).value="");document.getElementById("gapFeedback").className="feedback"}
-function checkOdd(){let n=0;oddItems.forEach((it,i)=>{let v=document.getElementById("o"+i).value;if(v==it[0].split(": ")[1].split(" / ").length-1){n++;document.getElementById("oc"+i).style.display="block"}else document.getElementById("oc"+i).style.display="none"});feedback("oddFeedback",n+" / "+oddItems.length+" correct. Corrections appear below correct choices.",n===oddItems.length);markTaskChecked("odd")}
-function checkSort(){let n=0;sortItems.forEach((it,i)=>{if(document.getElementById("s"+i).value===it[1])n++});feedback("sortFeedback",n+" / "+sortItems.length+" correct.",n===sortItems.length);markTaskChecked("sort")}
-function checkSequence(){let s=document.getElementById("sequence").value.toUpperCase().replace(/[^ABCDE]/g,"");feedback("sequenceFeedback",s==="BCADE"?"Correct: B → C → A → D → E.":"Suggested order: B → C → A → D → E.",s==="BCADE");markTaskChecked("sequence")}
-const checkedTasks = new Set();
-function markTaskChecked(task){
-  checkedTasks.add(task);
-  const btn=document.getElementById("answerUnlockButton");
-  if(checkedTasks.size===5){
-    btn.disabled=false;
-    btn.textContent="Show / hide answers";
-  }
-}
-function toggleAnswers(){
-  if(checkedTasks.size<5) return;
-  let e=document.getElementById("answerBox");
-  e.style.display=e.style.display==="block"?"none":"block";
-}
+function checkOdd(){let n=0;oddItems.forEach((it,i)=>{let v=document.getElementById("o"+i).value;if(v==it[0].split(": ")[1].split(" / ").length-1){n++;document.getElementById("oc"+i).style.display="block"}else document.getElementById("oc"+i).style.display="none"});feedback("oddFeedback",n+" / "+oddItems.length+" correct. Corrections appear below correct choices.",n===oddItems.length)}
+function checkSort(){let n=0;sortItems.forEach((it,i)=>{if(document.getElementById("s"+i).value===it[1])n++});feedback("sortFeedback",n+" / "+sortItems.length+" correct.",n===sortItems.length)}
+function checkSequence(){let s=document.getElementById("sequence").value.toUpperCase().replace(/[^ABCDE]/g,"");feedback("sequenceFeedback",s==="BCADE"?"Correct: B → C → A → D → E.":"Suggested order: B → C → A → D → E.",s==="BCADE")}
+function toggleAnswers(){let e=document.getElementById("answerBox");e.style.display=e.style.display==="block"?"none":"block"}
 build();
 </script>
 
