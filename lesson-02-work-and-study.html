@@ -19,7 +19,7 @@ h2{font-size:1.65rem;line-height:1.2;color:var(--green);margin:0 0 16px}h3{font-
 .callout{background:var(--green2);border-left:5px solid var(--green);padding:14px 17px;border-radius:8px;margin:14px 0}
 table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.95rem}th,td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}th{background:var(--green2);color:#174e39}
 .collocation{font-weight:700;color:#175d43}.chunk{background:#e8f4eb;padding:1px 4px;border-radius:4px;font-weight:700}
-button{background:var(--green);color:white;border:0;border-radius:9px;padding:10px 15px;font-size:.95rem;cursor:pointer;margin:5px 4px 5px 0}button.secondary{background:#e8f2eb;color:#1a5d43;border:1px solid var(--line)}button:hover{filter:brightness(.96)}
+button{background:var(--green);color:white;border:0;border-radius:9px;padding:10px 15px;font-size:.95rem;cursor:pointer;margin:5px 4px 5px 0}button.secondary{background:#e8f2eb;color:#1a5d43;border:1px solid var(--line)}button:hover{filter:brightness(.96)} button:disabled{opacity:.55;cursor:not-allowed;filter:none} #answerKeyContent[hidden]{display:none}
 input[type=text],select,textarea{font:inherit;border:1px solid #b8cec0;border-radius:8px;padding:9px 10px;width:100%;max-width:100%;background:#fff;color:var(--ink)}textarea{min-height:76px}
 .exercise{border:1px solid var(--line);border-radius:13px;padding:16px;margin:13px 0;background:#fcfefc}.options{display:grid;gap:8px;margin:10px 0}.options label{display:flex;gap:9px;align-items:flex-start;padding:8px 10px;background:#f5f9f6;border-radius:8px}
 .feedback{font-weight:bold;margin-top:8px}.correct{color:#176b4d}.incorrect{color:#a13e2d}.small{font-size:.9rem;color:var(--muted)}.wordbank{background:#f4f8f5;padding:12px;border-radius:10px}
@@ -75,19 +75,21 @@ footer{text-align:center;padding:25px;color:var(--muted);font-size:.9rem}
 <section class="card" id="situations"><h2>10. Choose and complete · 7 minutes</h2><p>Choose the best collocation from the box to complete each workplace or academic situation.</p><div class="wordbank">meet the requirements · work under pressure · acquire practical skills · take responsibility for · improve career prospects · submit an assignment</div><div id="situationArea"></div><button onclick="checkSituations()">Check answers</button><button class="secondary" onclick="resetSituations()">Reset</button><div id="situationFeedback" class="feedback"></div><p><b>Extension:</b> Choose one sentence and replace its subject or setting while keeping the collocation unchanged.</p><textarea placeholder="Rewrite one sentence here…"></textarea></section>
 <section class="card" id="exit"><h2>11. Exit ticket · 3 minutes</h2><ol><li>Write one new collocation from today’s lesson.</li><li>Write one collocation you checked in SkELL.</li><li>Complete the frame: “I can use __________ when I talk about __________.”</li></ol><textarea placeholder="My exit ticket…"></textarea><div class="callout">Self-check: Can you remember the whole phrase? Can you use it in a new sentence? Did you check at least one prediction in SkELL?</div></section>
 <section class="card" id="submissionPanel"><h2>12. Submit your work</h2><p>Enter your individual student code, check that you have completed the activities, and submit once. Your answers and available scores will be sent to the teacher’s response spreadsheet.</p><div class="exercise"><label for="studentCode"><b>Individual student code (required)</b></label><input id="studentCode" type="text" autocomplete="off" placeholder="e.g. S014" required><label for="groupCode">Group (optional)</label><input id="groupCode" type="text" placeholder="e.g. Group 2"></div><div class="submitbar"><button id="submitBtn" type="button" onclick="submitWork()">Submit my answers</button><span class="small">Do not include passwords or other sensitive information.</span></div><div id="submitStatus" role="status" aria-live="polite"></div><p class="small">The teacher must configure the submission endpoint before this button can send responses. The page will tell you if no endpoint has been configured.</p></section>
-<section class="card" id="answers"><h2>Answer key</h2><p class="small">Open only after completing the activities.</p><details><summary>Exercise 2 — Matching</summary><p>1–C; 2–E; 3–D; 4–F; 5–B; 6–A; 7–G; 8–H.</p></details>
+<section class="card" id="answers"><h2>Answer key</h2><p id="answerLockMessage" class="callout">The answer key is locked. Complete and check all five auto-checked activities to unlock it.</p><div id="answerKeyContent" hidden><details><summary>Exercise 2 — Matching</summary><p>1–C; 2–E; 3–D; 4–F; 5–B; 6–A; 7–G; 8–H.</p></details>
 <details><summary>Exercise 3 — Sentence completion</summary><ol><li>gain work experience</li><li>balance work and study</li><li>meet a deadline</li><li>develop professional skills</li><li>career prospects</li><li>heavy workload</li><li>work under pressure</li><li>take responsibility for</li></ol></details>
 <details><summary>Exercise 4 — Odd One Out</summary><ul><li>gain a deadline → meet a deadline</li><li>attend a contribution → make a contribution</li><li>submit a career → build a career</li><li>build a deadline → meet a deadline</li><li>meet work experience → gain work experience</li><li>make a qualification → gain a qualification</li></ul></details>
 <details><summary>Exercise 7 — Collocation repair</summary><ol><li>She wants to <b>gain work experience</b> during the summer.</li><li>Students must <b>submit an assignment</b> before Friday.</li><li>Working in a team can <b>develop communication skills</b> / contribute to the development of communication skills.</li><li>He hopes to <b>build a career</b> in teaching.</li><li>The collocation <b>balance work and study</b> is already correct; retain it and revise the sentence only for clarity if needed.</li></ol></details>
 <details><summary>Exercise 8 — Choose and complete</summary><ol><li>acquire practical skills</li><li>meet the requirements</li><li>submit an assignment</li><li>work under pressure</li><li>improve career prospects</li><li>take responsibility for</li></ol></details>
-<p class="small">Timing: Reading/orientation 7 min; Find chunks 7; Matching 7; Sentence completion 8; Odd One Out 6; Prediction 7; SkELL investigation 15; Repair 6; Choose and complete 7; Exit ticket 3; transitions/technical support 7. Total: 80 minutes.</p></section>
+<p class="small">Timing: Reading/orientation 7 min; Find chunks 7; Matching 7; Sentence completion 8; Odd One Out 6; Prediction 7; SkELL investigation 15; Repair 6; Choose and complete 7; Exit ticket 3; transitions/technical support 7. Total: 80 minutes.</p></div></section>
 </main></div><footer>Lesson 2 · Work and Study · B2 · Lexical Approach + SkELL</footer>
 <script>
 const matchItems=[
 ["apply","a job","a contribution","a qualification"],["attend","a lecture","a career","a deadline"],["submit","an assignment","practical skills","the requirements"],["build","a career","a lecture","a contribution"],["gain","a qualification","a job","a lecture"],["make","a contribution","a career","an assignment"],["meet","the requirements","a lecture","a contribution"],["acquire","practical skills","a deadline","a career"]];
 const matchCorrect=["a job","a lecture","an assignment","a career","a qualification","a contribution","the requirements","practical skills"];
 function buildMatching(){document.getElementById('matchArea').innerHTML=matchItems.map((x,i)=>`<p><b>${i+1}. ${x[0]}</b> <select id="m${i}"><option value="">Choose an ending…</option>${[x[1],x[2],x[3]].map(y=>`<option>${y}</option>`).join('')}</select></p>`).join('')}
-function checkMatching(){let n=0;matchCorrect.forEach((a,i)=>{if(document.getElementById('m'+i).value===a)n++});document.getElementById('matchFeedback').innerHTML=`${n}/8 correct. ${n===8?'Excellent — read each full collocation aloud.':'Review the collocation bank and try again.'}`;document.getElementById('matchFeedback').className='feedback '+(n===8?'correct':'incorrect')}
+const checkedTasks = new Set();
+function markTaskChecked(task){checkedTasks.add(task);if(checkedTasks.size===5){document.getElementById('answerKeyContent').hidden=false;document.getElementById('answerLockMessage').textContent='Answer key unlocked. Review your answers and corrections.';}}
+function checkMatching(){markTaskChecked('matching');let n=0;matchCorrect.forEach((a,i)=>{if(document.getElementById('m'+i).value===a)n++});document.getElementById('matchFeedback').innerHTML=`${n}/8 correct. ${n===8?'Excellent — read each full collocation aloud.':'Review the collocation bank and try again.'}`;document.getElementById('matchFeedback').className='feedback '+(n===8?'correct':'incorrect')}
 function resetMatching(){buildMatching();document.getElementById('matchFeedback').textContent=''}
 const gaps=[
 ["An internship is a good way to ____ before graduation.","gain work experience"],
@@ -101,7 +103,7 @@ const gaps=[
 ];
 function buildGaps(){document.getElementById('gapArea').innerHTML=gaps.map((x,i)=>`<div class="exercise">${i+1}. ${x[0].replace('____',`<input id="g${i}" type="text" placeholder="Complete collocation">`)}</div>`).join('')}
 function norm(s){return s.toLowerCase().replace(/[.,!?]/g,'').replace(/\s+/g,' ').trim()}
-function checkGaps(){let n=0;gaps.forEach((x,i)=>{if(norm(document.getElementById('g'+i).value)===norm(x[1]))n++});feedback('gapFeedback',n,8)}
+function checkGaps(){markTaskChecked('gaps');let n=0;gaps.forEach((x,i)=>{if(norm(document.getElementById('g'+i).value)===norm(x[1]))n++});feedback('gapFeedback',n,8)}
 function resetGaps(){buildGaps();document.getElementById('gapFeedback').textContent=''}
 const odds=[
 ["gain work experience · gain a qualification · gain practical skills · gain a deadline",3,"meet a deadline"],
@@ -111,7 +113,7 @@ const odds=[
 ["meet the requirements · meet a deadline · meet a target · meet work experience",3,"gain work experience"],
 ["make a contribution · make progress · make a decision · make a qualification",3,"gain a qualification"]];
 function buildOdd(){document.getElementById('oddArea').innerHTML=odds.map((x,i)=>`<div class="exercise"><p><b>${i+1}.</b> ${x[0]}</p><label>Choose the unnatural collocation</label><select id="o${i}"><option value="">Choose…</option>${x[0].split(' · ').map((v,j)=>`<option value="${j}">${v}</option>`).join('')}</select><label>Correct it</label><input id="oc${i}" type="text" placeholder="Write a natural alternative"></div>`).join('')}
-function checkOdd(){let n=0;odds.forEach((x,i)=>{let v=document.getElementById('o'+i).value;let c=norm(document.getElementById('oc'+i).value);if(Number(v)===x[1]&&c===norm(x[2]))n++});feedback('oddFeedback',n,6)}
+function checkOdd(){markTaskChecked('odd');let n=0;odds.forEach((x,i)=>{let v=document.getElementById('o'+i).value;let c=norm(document.getElementById('oc'+i).value);if(Number(v)===x[1]&&c===norm(x[2]))n++});feedback('oddFeedback',n,6)}
 function resetOdd(){buildOdd();document.getElementById('oddFeedback').textContent=''}
 const repairs=[
 ["She wants to get work experience during the summer.","gain work experience"],
@@ -120,7 +122,7 @@ const repairs=[
 ["He hopes to make a career in teaching.","build a career"],
 ["It is hard to manage employment and university; she must balance work and study.","balance work and study"]];
 function buildRepair(){document.getElementById('repairArea').innerHTML=repairs.map((x,i)=>`<div class="exercise"><p>${i+1}. ${x[0]}</p><input id="r${i}" type="text" placeholder="Write the corrected collocation or sentence"></div>`).join('')}
-function checkRepair(){let n=0;repairs.forEach((x,i)=>{let v=norm(document.getElementById('r'+i).value);if(v===norm(x[1])||v.includes(norm(x[1])))n++});feedback('repairFeedback',n,5)}
+function checkRepair(){markTaskChecked('repair');let n=0;repairs.forEach((x,i)=>{let v=norm(document.getElementById('r'+i).value);if(v===norm(x[1])||v.includes(norm(x[1])))n++});feedback('repairFeedback',n,5)}
 function resetRepair(){buildRepair();document.getElementById('repairFeedback').textContent=''}
 const situations=[
 ["A student wants to learn by doing real tasks during an internship. They hope to ____.","acquire practical skills"],
@@ -130,7 +132,7 @@ const situations=[
 ["Learning another language may ____.","improve career prospects"],
 ["Group members should ____ their part of the project.","take responsibility for"]];
 function buildSituations(){document.getElementById('situationArea').innerHTML=situations.map((x,i)=>`<div class="exercise">${i+1}. ${x[0].replace('____',`<input id="s${i}" type="text" placeholder="Complete collocation">`)}</div>`).join('')}
-function checkSituations(){let n=0;situations.forEach((x,i)=>{if(norm(document.getElementById('s'+i).value)===norm(x[1]))n++});feedback('situationFeedback',n,6)}
+function checkSituations(){markTaskChecked('situations');let n=0;situations.forEach((x,i)=>{if(norm(document.getElementById('s'+i).value)===norm(x[1]))n++});feedback('situationFeedback',n,6)}
 function resetSituations(){buildSituations();document.getElementById('situationFeedback').textContent=''}
 function feedback(id,n,total){let el=document.getElementById(id);el.textContent=`${n}/${total} correct. `+(n===total?'Well done!':'Check the collocation bank or answer key, then try again.');el.className='feedback '+(n===total?'correct':'incorrect')}
 buildMatching();buildGaps();buildOdd();buildRepair();buildSituations();
