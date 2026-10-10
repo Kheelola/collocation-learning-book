@@ -75,7 +75,7 @@ footer{text-align:center;padding:25px;color:var(--muted);font-size:.9rem}
 <section class="card" id="situations"><h2>10. Choose and complete · 7 minutes</h2><p>Choose the best collocation from the box to complete each workplace or academic situation.</p><div class="wordbank">meet the requirements · work under pressure · acquire practical skills · take responsibility for · improve career prospects · submit an assignment</div><div id="situationArea"></div><button onclick="checkSituations()">Check answers</button><button class="secondary" onclick="resetSituations()">Reset</button><div id="situationFeedback" class="feedback"></div><p><b>Extension:</b> Choose one sentence and replace its subject or setting while keeping the collocation unchanged.</p><textarea placeholder="Rewrite one sentence here…"></textarea></section>
 <section class="card" id="exit"><h2>11. Exit ticket · 3 minutes</h2><ol><li>Write one new collocation from today’s lesson.</li><li>Write one collocation you checked in SkELL.</li><li>Complete the frame: “I can use __________ when I talk about __________.”</li></ol><textarea placeholder="My exit ticket…"></textarea><div class="callout">Self-check: Can you remember the whole phrase? Can you use it in a new sentence? Did you check at least one prediction in SkELL?</div></section>
 <section class="card" id="submissionPanel"><h2>12. Submit your work</h2><p>Enter your individual student code, check that you have completed the activities, and submit once. Your answers and available scores will be sent to the teacher’s response spreadsheet.</p><div class="exercise"><label for="studentCode"><b>Individual student code (required)</b></label><input id="studentCode" type="text" autocomplete="off" placeholder="e.g. S014" required><label for="groupCode">Group (optional)</label><input id="groupCode" type="text" placeholder="e.g. Group 2"></div><div class="submitbar"><button id="submitBtn" type="button" onclick="submitWork()">Submit my answers</button><span class="small">Do not include passwords or other sensitive information.</span></div><div id="submitStatus" role="status" aria-live="polite"></div><p class="small">The teacher must configure the submission endpoint before this button can send responses. The page will tell you if no endpoint has been configured.</p></section>
-<section class="card" id="answers" hidden><h2>Answer key</h2><p class="small">Open only after completing the activities.</p><details><summary>Exercise 2 — Matching</summary><p>1–C; 2–E; 3–D; 4–F; 5–B; 6–A; 7–G; 8–H.</p></details>
+<section class="card" id="answers"><h2>Answer key</h2><p class="small">Open only after completing the activities.</p><details><summary>Exercise 2 — Matching</summary><p>1–C; 2–E; 3–D; 4–F; 5–B; 6–A; 7–G; 8–H.</p></details>
 <details><summary>Exercise 3 — Sentence completion</summary><ol><li>gain work experience</li><li>balance work and study</li><li>meet a deadline</li><li>develop professional skills</li><li>career prospects</li><li>heavy workload</li><li>work under pressure</li><li>take responsibility for</li></ol></details>
 <details><summary>Exercise 4 — Odd One Out</summary><ul><li>gain a deadline → meet a deadline</li><li>attend a contribution → make a contribution</li><li>submit a career → build a career</li><li>build a deadline → meet a deadline</li><li>meet work experience → gain work experience</li><li>make a qualification → gain a qualification</li></ul></details>
 <details><summary>Exercise 7 — Collocation repair</summary><ol><li>She wants to <b>gain work experience</b> during the summer.</li><li>Students must <b>submit an assignment</b> before Friday.</li><li>Working in a team can <b>develop communication skills</b> / contribute to the development of communication skills.</li><li>He hopes to <b>build a career</b> in teaching.</li><li>The collocation <b>balance work and study</b> is already correct; retain it and revise the sentence only for clarity if needed.</li></ol></details>
@@ -135,30 +135,8 @@ function resetSituations(){buildSituations();document.getElementById('situationF
 function feedback(id,n,total){let el=document.getElementById(id);el.textContent=`${n}/${total} correct. `+(n===total?'Well done!':'Check the collocation bank or answer key, then try again.');el.className='feedback '+(n===total?'correct':'incorrect')}
 buildMatching();buildGaps();buildOdd();buildRepair();buildSituations();
 
-// Answer key remains hidden until all five scored activities have been checked.
-const checkedActivities = new Set();
-function markActivityChecked(name) {
-  checkedActivities.add(name);
-  const answerSection = document.getElementById('answers');
-  if (checkedActivities.size >= 5) {
-    answerSection.hidden = false;
-    const note = answerSection.querySelector('p.small');
-    if (note) note.textContent = 'All five scored activities have been checked. You may now review the answers.';
-  }
-}
-const _checkMatching = checkMatching;
-checkMatching = function(){ _checkMatching(); markActivityChecked('matching'); };
-const _checkGaps = checkGaps;
-checkGaps = function(){ _checkGaps(); markActivityChecked('gaps'); };
-const _checkOdd = checkOdd;
-checkOdd = function(){ _checkOdd(); markActivityChecked('odd'); };
-const _checkRepair = checkRepair;
-checkRepair = function(){ _checkRepair(); markActivityChecked('repair'); };
-const _checkSituations = checkSituations;
-checkSituations = function(){ _checkSituations(); markActivityChecked('situations'); };
-
 // SET THIS to the deployed Google Apps Script Web App URL before publishing.
-const SUBMISSION_ENDPOINT = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+const SUBMISSION_ENDPOINT = "https://script.google.com/macros/s/AKfycby8CiVt1YZZniSYBg7F_T1_-5-lWyRTVBAieCnj4LaR0rLCtM5KzpNNntaDjJijxIJi/exec";
 function collectResponses(){
   const answers={};
   let fieldIndex=0;
