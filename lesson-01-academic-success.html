@@ -30,7 +30,6 @@ button.secondary{background:#e6f2eb;color:var(--green);border:1px solid #bad9c6}
 select,input[type=text],textarea{font:16px Georgia,serif;padding:9px;border:1px solid #b9c9bf;border-radius:7px;background:white;max-width:100%}
 label{display:block;margin:10px 0}.feedback{font:14px Arial,sans-serif;padding:10px;border-radius:8px;margin-top:10px;display:none}.correct{display:block;background:#e3f5e9;color:#155c38}.incorrect{display:block;background:#fff1dc;color:#795015}
 .small{font:13px/1.5 Arial,sans-serif;color:var(--muted)}.answer{display:none;background:#f3f7f4;border-radius:8px;padding:12px;margin-top:10px}
-#answers .locked-note{background:#fff4d6;border:1px solid #e6cf83;border-radius:8px;padding:12px}#answers .unlock-btn:disabled{opacity:.55;cursor:not-allowed}
 footer{text-align:center;color:var(--muted);font:12px Arial,sans-serif;padding:24px}
 @media print{nav,button{display:none}body{background:white}section,.page{box-shadow:none;break-inside:avoid}header{padding:24px}}
 </style>
@@ -142,9 +141,8 @@ footer{text-align:center;color:var(--muted);font:12px Arial,sans-serif;padding:2
 
 <section id="answers">
 <h2>7. Answer key</h2>
-<p id="answerLockNote" class="locked-note">The answer key is locked. Complete each practice task and press its <b>Check</b> button first.</p>
-<button id="answerToggle" class="secondary unlock-btn" onclick="toggleAnswers()" disabled>Complete the practice tasks first</button>
-<div class="answer" id="answerBox" hidden>
+<button class="secondary" onclick="toggleAnswers()">Show / hide answers</button>
+<div class="answer" id="answerBox">
 <p><b>Task 1 — Matching</b><br>make → progress; meet → a deadline; conduct → research; draw → a conclusion; broaden → your knowledge; gain → insight into; pay → attention to; pose → a challenge.</p>
 <p><b>Task 2 — Completion</b><br>1 deadline; 2 research; 3 conclusion; 4 progress; 5 insight; 6 workload; 7 engaged; 8 effective.</p>
 <p><b>Task 3 — Odd One Out</b><br>a homework → do homework / complete an assignment; a progress → make progress; a conclusion after conduct → draw/reach a conclusion; heavy knowledge → broad/deep knowledge; a deadline after draw → meet a deadline; a research → conduct/do research.</p>
@@ -206,22 +204,20 @@ function build(){
  sortItems.forEach((it,i)=>{let l=el("label",{},it[0]+" ");let s=el("select",{id:"s"+i});s.appendChild(el("option",{value:""},"Choose category…"));it[2].forEach(v=>s.appendChild(el("option",{value:v},v)));l.appendChild(s);so.appendChild(l)});
 }
 function feedback(id,msg,ok){let e=document.getElementById(id);e.textContent=msg;e.className="feedback "+(ok?"correct":"incorrect")}
-let checkedTasks={matching:false,gaps:false,odd:false,sort:false,sequence:false};
-function updateAnswerLock(){const ready=Object.values(checkedTasks).every(Boolean);const b=document.getElementById("answerToggle");b.disabled=!ready;b.textContent=ready?"Show / hide answer key":"Complete and check all five practice tasks first";document.getElementById("answerLockNote").textContent=ready?"You have checked all five practice tasks. You can now open the answer key.":"The answer key is locked. Complete each practice task and press its Check button first.";}
-function checkMatching(){let n=0;matchItems.forEach((it,i)=>{if(document.getElementById("m"+i).value==it[2])n++});checkedTasks.matching=true;updateAnswerLock();feedback("matchFeedback",n+" / "+matchItems.length+" correct.",n===matchItems.length)}
+function checkMatching(){let n=0;matchItems.forEach((it,i)=>{if(document.getElementById("m"+i).value==it[2])n++});feedback("matchFeedback",n+" / "+matchItems.length+" correct.",n===matchItems.length)}
 function resetMatching(){matchItems.forEach((_,i)=>document.getElementById("m"+i).value="");document.getElementById("matchFeedback").className="feedback"}
-function checkGaps(){let n=0;gapItems.forEach((it,i)=>{if(document.getElementById("g"+i).value==it[2])n++});checkedTasks.gaps=true;updateAnswerLock();feedback("gapFeedback",n+" / "+gapItems.length+" correct.",n===gapItems.length)}
+function checkGaps(){let n=0;gapItems.forEach((it,i)=>{if(document.getElementById("g"+i).value==it[2])n++});feedback("gapFeedback",n+" / "+gapItems.length+" correct.",n===gapItems.length)}
 function resetGaps(){gapItems.forEach((_,i)=>document.getElementById("g"+i).value="");document.getElementById("gapFeedback").className="feedback"}
-function checkOdd(){let n=0;oddItems.forEach((it,i)=>{let v=document.getElementById("o"+i).value;if(v==it[0].split(": ")[1].split(" / ").length-1){n++;document.getElementById("oc"+i).style.display="block"}else document.getElementById("oc"+i).style.display="none"});checkedTasks.odd=true;updateAnswerLock();feedback("oddFeedback",n+" / "+oddItems.length+" correct. Corrections appear below correct choices.",n===oddItems.length)}
-function checkSort(){let n=0;sortItems.forEach((it,i)=>{if(document.getElementById("s"+i).value===it[1])n++});checkedTasks.sort=true;updateAnswerLock();feedback("sortFeedback",n+" / "+sortItems.length+" correct.",n===sortItems.length)}
-function checkSequence(){let s=document.getElementById("sequence").value.toUpperCase().replace(/[^ABCDE]/g,"");checkedTasks.sequence=true;updateAnswerLock();feedback("sequenceFeedback",s==="BCADE"?"Correct: B → C → A → D → E.":"Suggested order: B → C → A → D → E.",s==="BCADE")}
-function toggleAnswers(){if(!Object.values(checkedTasks).every(Boolean))return;let e=document.getElementById("answerBox");const opening=e.hidden;e.hidden=!opening;e.style.display=opening?"block":"none";document.getElementById("answerToggle").textContent=opening?"Hide answer key":"Show answer key"}
+function checkOdd(){let n=0;oddItems.forEach((it,i)=>{let v=document.getElementById("o"+i).value;if(v==it[0].split(": ")[1].split(" / ").length-1){n++;document.getElementById("oc"+i).style.display="block"}else document.getElementById("oc"+i).style.display="none"});feedback("oddFeedback",n+" / "+oddItems.length+" correct. Corrections appear below correct choices.",n===oddItems.length)}
+function checkSort(){let n=0;sortItems.forEach((it,i)=>{if(document.getElementById("s"+i).value===it[1])n++});feedback("sortFeedback",n+" / "+sortItems.length+" correct.",n===sortItems.length)}
+function checkSequence(){let s=document.getElementById("sequence").value.toUpperCase().replace(/[^ABCDE]/g,"");feedback("sequenceFeedback",s==="BCADE"?"Correct: B → C → A → D → E.":"Suggested order: B → C → A → D → E.",s==="BCADE")}
+function toggleAnswers(){let e=document.getElementById("answerBox");e.style.display=e.style.display==="block"?"none":"block"}
 build();
 </script>
 
 <section id="submissionPanel" style="max-width:900px;margin:24px auto;padding:24px;background:#fff;border:1px solid #d8e6dc;border-radius:16px;font-family:Arial,sans-serif;color:#20312a"><h2>Submit your work</h2><p>Enter your individual student code and send your answers to your teacher.</p><label for="studentCode"><b>Individual student code (required)</b></label><input id="studentCode" autocomplete="off" placeholder="e.g. S014" style="display:block;width:100%;max-width:360px;padding:12px;margin:8px 0 16px;border:1px solid #b7cabe;border-radius:8px"><label for="groupCode"><b>Group (optional)</b></label><input id="groupCode" autocomplete="off" placeholder="e.g. Group 2" style="display:block;width:100%;max-width:360px;padding:12px;margin:8px 0 16px;border:1px solid #b7cabe;border-radius:8px"><button id="submitBtn" type="button" onclick="submitLesson1()" style="background:#176b4d;color:white;border:0;padding:12px 18px;border-radius:8px;font-weight:bold;cursor:pointer">Submit my answers</button><p id="submitStatus" role="status" aria-live="polite"></p><small>Teacher: configure the Apps Script endpoint before publishing. A submission message does not replace checking the spreadsheet.</small></section>
 <script>
-const SUBMISSION_ENDPOINT = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+const SUBMISSION_ENDPOINT = "https://script.google.com/macros/s/AKfycby8CiVt1YZZniSYBg7F_T1_-5-lWyRTVBAieCnj4LaR0rLCtM5KzpNNntaDjJijxIJi/exec";
 function submitLesson1(){
  const status=document.getElementById('submitStatus'), btn=document.getElementById('submitBtn'), code=document.getElementById('studentCode').value.trim();
  if(!code){status.textContent='Please enter your individual student code.';return;}
