@@ -3,192 +3,236 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lesson 2 — Work and Study | Interactive E-book</title>
+<title>Lesson 1 — Academic Success | Collocation Learning Book</title>
 <style>
-:root{--green:#176b4d;--green2:#e9f5ee;--mint:#f5faf6;--ink:#20312a;--muted:#64756c;--line:#d8e6dc;--gold:#f3c96b}
-*{box-sizing:border-box} body{margin:0;background:#eef3ef;color:var(--ink);font:17px/1.65 Arial,Helvetica,sans-serif}
-header{background:linear-gradient(135deg,#124e3a,#21835e);color:white;padding:42px 22px 36px}
-.hero{max-width:1000px;margin:auto}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.78rem;font-weight:bold;opacity:.86}
-h1{font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.04;margin:.3em 0}.subtitle{font-size:1.1rem;max-width:720px}
-.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.pill{border:1px solid #ffffff70;border-radius:999px;padding:5px 12px;font-size:.9rem}
-.layout{max-width:1120px;margin:24px auto;padding:0 16px;display:grid;grid-template-columns:230px minmax(0,1fr);gap:22px}
-nav{position:sticky;top:14px;align-self:start;background:white;border:1px solid var(--line);border-radius:16px;padding:18px}
-nav strong{display:block;color:var(--green);margin-bottom:8px}nav a{display:block;text-decoration:none;color:var(--ink);padding:7px 8px;border-radius:8px;font-size:.94rem}nav a:hover{background:var(--green2)}
-main{min-width:0}.card{background:white;border:1px solid var(--line);border-radius:18px;padding:clamp(20px,4vw,34px);margin-bottom:20px;box-shadow:0 5px 18px #1c55300a}
-h2{font-size:1.65rem;line-height:1.2;color:var(--green);margin:0 0 16px}h3{font-size:1.15rem;margin:18px 0 8px;color:#245f48}
-.callout{background:var(--green2);border-left:5px solid var(--green);padding:14px 17px;border-radius:8px;margin:14px 0}
-table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.95rem}th,td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}th{background:var(--green2);color:#174e39}
-.collocation{font-weight:700;color:#175d43}.chunk{background:#e8f4eb;padding:1px 4px;border-radius:4px;font-weight:700}
-button{background:var(--green);color:white;border:0;border-radius:9px;padding:10px 15px;font-size:.95rem;cursor:pointer;margin:5px 4px 5px 0}button.secondary{background:#e8f2eb;color:#1a5d43;border:1px solid var(--line)}button:hover{filter:brightness(.96)}
-input[type=text],select,textarea{font:inherit;border:1px solid #b8cec0;border-radius:8px;padding:9px 10px;width:100%;max-width:100%;background:#fff;color:var(--ink)}textarea{min-height:76px}
-.exercise{border:1px solid var(--line);border-radius:13px;padding:16px;margin:13px 0;background:#fcfefc}.options{display:grid;gap:8px;margin:10px 0}.options label{display:flex;gap:9px;align-items:flex-start;padding:8px 10px;background:#f5f9f6;border-radius:8px}
-.feedback{font-weight:bold;margin-top:8px}.correct{color:#176b4d}.incorrect{color:#a13e2d}.small{font-size:.9rem;color:var(--muted)}.wordbank{background:#f4f8f5;padding:12px;border-radius:10px}
-details{background:#f6faf7;border:1px solid var(--line);border-radius:10px;padding:12px;margin-top:12px}summary{cursor:pointer;font-weight:bold;color:var(--green)}
-footer{text-align:center;padding:25px;color:var(--muted);font-size:.9rem}
-@media(max-width:760px){.layout{grid-template-columns:1fr}nav{position:static}nav div{display:grid;grid-template-columns:1fr 1fr;gap:2px}body{font-size:16px}}
-@media print{body{background:white}.layout{display:block}nav,button{display:none}.card{box-shadow:none;break-inside:avoid}}
-
-#submissionPanel{border:2px solid #2b7653;background:#f3faf5}.submitbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.submitbar button{background:#216e4b;color:#fff;border:0;border-radius:8px;padding:12px 18px;font-weight:700;cursor:pointer}.submitbar button:disabled{opacity:.6;cursor:wait}.status{padding:10px;border-radius:8px;margin-top:12px}.status.ok{background:#e5f6e9;color:#175b32}.status.warn{background:#fff4d6;color:#704d00}.status.err{background:#fde8e7;color:#8a211c}
+:root{--green:#145c43;--mint:#e5f3eb;--lime:#cce8d8;--ink:#24332d;--muted:#65756d;--paper:#fff;--bg:#f2f6f3;--gold:#f7e8b4}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.62 Georgia,"Times New Roman",serif}
+header{background:linear-gradient(135deg,#104b37,#23835d);color:white;padding:42px 22px 34px}
+.hero,.wrap{max-width:940px;margin:auto}.eyebrow{font:700 12px/1.4 Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#c9ead8}
+h1{font:700 clamp(2rem,5vw,3.4rem)/1.08 Arial,sans-serif;margin:14px 0}
+.subtitle{font:18px/1.5 Arial,sans-serif;max-width:690px;color:#e7f5ec}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.pill{border:1px solid #a4d3b8;border-radius:99px;padding:5px 12px;font:13px Arial,sans-serif}
+nav{position:sticky;top:0;z-index:4;background:#fff;border-bottom:1px solid #dce6df;overflow-x:auto;white-space:nowrap;padding:12px max(16px,calc((100% - 940px)/2));}
+nav a{font:13px Arial,sans-serif;color:var(--green);text-decoration:none;margin-right:18px;font-weight:bold}
+main{max-width:940px;margin:28px auto;padding:0 18px 60px}
+section,.page{background:var(--paper);border:1px solid #e0e9e3;border-radius:18px;padding:clamp(20px,4vw,36px);margin:20px 0;box-shadow:0 4px 18px #153f2a0b}
+h2{font:700 25px/1.25 Arial,sans-serif;color:var(--green);margin:0 0 15px}
+h3{font:700 18px Arial,sans-serif;color:var(--green);margin-top:25px}
+.lead{font-size:19px}.callout{border-left:5px solid #4a9a70;background:var(--mint);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.card{border:1px solid #dce9e0;background:#fbfdfb;border-radius:12px;padding:15px}
+.chunk{font:700 17px Arial,sans-serif;color:var(--green)}.meaning{font:14px Arial,sans-serif;color:var(--muted);margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}th{background:var(--green);color:white;text-align:left;font:700 13px Arial,sans-serif}td,th{padding:10px;border:1px solid #dce6df;vertical-align:top}tr:nth-child(even) td{background:#f7faf8}
+.task{border:1px solid #dce6df;border-radius:14px;padding:18px;margin:16px 0}
+.taskhead{display:flex;gap:10px;align-items:center;margin-bottom:8px}.num{background:var(--green);color:white;border-radius:8px;padding:4px 9px;font:700 13px Arial,sans-serif}
+button{background:var(--green);color:white;border:0;border-radius:8px;padding:10px 15px;font:700 14px Arial,sans-serif;cursor:pointer;margin:7px 4px 3px 0}
+button.secondary{background:#e6f2eb;color:var(--green);border:1px solid #bad9c6}
+select,input[type=text],textarea{font:16px Georgia,serif;padding:9px;border:1px solid #b9c9bf;border-radius:7px;background:white;max-width:100%}
+label{display:block;margin:10px 0}.feedback{font:14px Arial,sans-serif;padding:10px;border-radius:8px;margin-top:10px;display:none}.correct{display:block;background:#e3f5e9;color:#155c38}.incorrect{display:block;background:#fff1dc;color:#795015}
+.small{font:13px/1.5 Arial,sans-serif;color:var(--muted)}.answer{display:none;background:#f3f7f4;border-radius:8px;padding:12px;margin-top:10px}
+#answers .locked-note{background:#fff4d6;border:1px solid #e6cf83;border-radius:8px;padding:12px}#answers .unlock-btn:disabled{opacity:.55;cursor:not-allowed}
+footer{text-align:center;color:var(--muted);font:12px Arial,sans-serif;padding:24px}
+@media print{nav,button{display:none}body{background:white}section,.page{box-shadow:none;break-inside:avoid}header{padding:24px}}
 </style>
 </head>
 <body>
-<header><div class="hero"><div class="eyebrow">English Philology · Lexical Collocational Competence</div><h1>WORK<br>AND STUDY</h1><div class="subtitle">Lesson 2 · An interactive e-book for developing lexical collocational competence through the Lexical Approach and SkELL corpus investigation.</div><div class="meta"><span class="pill">B2 level</span><span class="pill">80 minutes</span><span class="pill">Read · Practise · Investigate</span></div></div></header>
-<div class="layout">
-<nav><strong>IN THIS LESSON</strong><div>
-<a href="#outcomes">1. Learning outcomes</a><a href="#bank">2. Collocation bank</a><a href="#reading">3. Reading</a><a href="#chunks">4. Find the chunks</a><a href="#matching">5. Matching</a><a href="#complete">6. Complete sentences</a><a href="#odd">7. Odd one out</a><a href="#skell">8. SkELL investigation</a><a href="#repair">9. Collocation repair</a><a href="#situations">10. Choose and complete</a><a href="#exit">11. Exit ticket</a><a href="#answers">Answer key</a></div></nav>
+<header><div class="hero">
+<div class="eyebrow">B2 English • Digital lesson • 80 minutes</div>
+<h1>Academic Success:<br>Learning in Collocations</h1>
+<p class="subtitle">Discover how words naturally work together. Notice useful chunks, test your hypotheses, check examples in SkELL, and use the collocations to talk about your own learning.</p>
+<div class="meta"><span class="pill">Level B2</span><span class="pill">80 minutes</span><span class="pill">Lexical Approach</span><span class="pill">Self-check activities</span></div>
+</div></header>
+<nav>
+<a href="#goals">Goals</a><a href="#chunks">Collocation bank</a><a href="#reading">Read & notice</a><a href="#tasks">Practice</a><a href="#skell">SkELL lab</a><a href="#use">Use it</a><a href="#answers">Answer key</a>
+</nav>
 <main>
-<section class="card" id="outcomes"><h2>1. Learning outcomes</h2><p>By the end of the lesson, you will be able to:</p><ul><li>recognise common collocations related to work, study and career development;</li><li>retrieve useful lexical chunks as complete units;</li><li>predict likely word partnerships and check selected predictions in SkELL;</li><li>use collocations accurately in short workplace and academic contexts.</li></ul><div class="callout"><b>Lexical principle</b><br>Learn words in recurring combinations and useful sentence frames. Notice patterns, retrieve whole chunks and practise adapting them to new contexts.</div></section>
-<section class="card" id="bank"><h2>2. Collocation bank</h2><p>Study the expressions as complete units. Read the example aloud and notice which words occur together.</p>
-<table><thead><tr><th>Collocation</th><th>Meaning in context</th><th>Example</th></tr></thead><tbody>
-<tr><td class="collocation">gain work experience</td><td>develop practical knowledge by doing a job</td><td>An internship helps students <b>gain work experience</b>.</td></tr>
-<tr><td class="collocation">meet the requirements</td><td>satisfy the conditions needed for something</td><td>Applicants must <b>meet the requirements</b> for the course.</td></tr>
-<tr><td class="collocation">apply for a job</td><td>formally ask to be considered for a job</td><td>She plans to <b>apply for a job</b> at the university.</td></tr>
-<tr><td class="collocation">attend a lecture</td><td>be present at a lecture</td><td>Students are expected to <b>attend the lecture</b>.</td></tr>
-<tr><td class="collocation">submit an assignment</td><td>send or hand in academic work</td><td>You must <b>submit the assignment</b> by Friday.</td></tr>
-<tr><td class="collocation">meet a deadline</td><td>finish something by the required time</td><td>We need to <b>meet the deadline</b>.</td></tr>
-<tr><td class="collocation">develop professional skills</td><td>improve abilities needed for a profession</td><td>Group projects can <b>develop professional skills</b>.</td></tr>
-<tr><td class="collocation">build a career</td><td>make progress towards a professional life</td><td>He hopes to <b>build a career</b> in education.</td></tr>
-<tr><td class="collocation">take responsibility for</td><td>accept that something is your duty</td><td>Students should <b>take responsibility for</b> their learning.</td></tr>
-<tr><td class="collocation">work under pressure</td><td>work effectively in stressful conditions</td><td>Nurses often have to <b>work under pressure</b>.</td></tr>
-<tr><td class="collocation">balance work and study</td><td>manage the demands of employment and education</td><td>It can be difficult to <b>balance work and study</b>.</td></tr>
-<tr><td class="collocation">gain a qualification</td><td>obtain an official certificate or degree</td><td>She wants to <b>gain a teaching qualification</b>.</td></tr>
-<tr><td class="collocation">make a contribution</td><td>do something that helps achieve a result</td><td>Every team member can <b>make a contribution</b>.</td></tr>
-<tr><td class="collocation">acquire practical skills</td><td>learn abilities through doing real tasks</td><td>Internships help students <b>acquire practical skills</b>.</td></tr>
-<tr><td class="collocation">career prospects</td><td>future opportunities for employment or promotion</td><td>Language skills can improve <b>career prospects</b>.</td></tr>
-<tr><td class="collocation">heavy workload</td><td>a large amount of work to complete</td><td>A <b>heavy workload</b> can make time management difficult.</td></tr>
-</tbody></table></section>
-<section class="card" id="reading"><h2>3. Reading text</h2><h3>Combining Work and Study</h3>
-<p>Many university students try to <span class="chunk">balance work and study</span>. A part-time job can help them <span class="chunk">gain work experience</span>, <span class="chunk">acquire practical skills</span> and improve their <span class="chunk">career prospects</span>. At the same time, students must <span class="chunk">attend lectures</span>, <span class="chunk">submit assignments</span> and <span class="chunk">meet deadlines</span>.</p>
-<p>Managing these responsibilities requires planning. Students need to <span class="chunk">take responsibility for</span> their learning and organise their time carefully. When they have a <span class="chunk">heavy workload</span>, it can be difficult to <span class="chunk">work under pressure</span> without becoming exhausted. Setting priorities and asking for support can help them manage competing demands.</p>
-<p>Work experience can also help students <span class="chunk">build a career</span>. Employers often look for candidates who <span class="chunk">meet the requirements</span> of a position, communicate clearly and <span class="chunk">make a contribution</span> to a team. Professional skills developed at university may therefore be useful in the workplace.</p>
-<p>Students do not need to choose between academic development and professional experience in every situation. With realistic planning, they may be able to <span class="chunk">gain a qualification</span> while developing the skills needed for future employment.</p>
-<div class="callout"><b>Notice:</b> Which verbs combine with “experience”, “skills”, “a career” and “a deadline”? Remember the whole phrase, not only the individual word.</div></section>
-<section class="card" id="chunks"><h2>4. Find the chunks · 7 minutes</h2><p>Return to the reading text. Identify at least eight word combinations connected with work and study. Complete the fields below.</p>
-<div class="exercise"><label>Chunk 1 — verb/adjective + noun/complement</label><input type="text" id="chunk1" placeholder="e.g. gain work experience"><label>Chunk 2</label><input type="text" id="chunk2" placeholder="Write another complete collocation"><label>Chunk 3</label><input type="text" id="chunk3" placeholder="Write another complete collocation"><label>Chunk 4</label><input type="text" id="chunk4" placeholder="Write another complete collocation"><label>Chunk 5</label><input type="text" id="chunk5" placeholder="Write another complete collocation"><label>Chunk 6</label><input type="text" id="chunk6" placeholder="Write another complete collocation"><label>Chunk 7</label><input type="text" id="chunk7" placeholder="Write another complete collocation"><label>Chunk 8</label><input type="text" id="chunk8" placeholder="Write another complete collocation"><p>Choose two collocations and say whether you already knew them or noticed them for the first time.</p><textarea placeholder="I already knew … / I noticed … for the first time."></textarea></div></section>
-<section class="card" id="matching"><h2>5. Match the collocations · 7 minutes</h2><p>Choose the correct ending for each beginning.</p><div class="exercise" id="matchArea"></div><button onclick="checkMatching()">Check answers</button><button class="secondary" onclick="resetMatching()">Reset</button><div id="matchFeedback" class="feedback"></div></section>
-<section class="card" id="complete"><h2>6. Complete the sentences · 8 minutes</h2><p>Use each expression from the box once.</p><div class="wordbank">balance work and study · meet a deadline · gain work experience · take responsibility for · heavy workload · work under pressure · career prospects · develop professional skills</div><div id="gapArea"></div><button onclick="checkGaps()">Check answers</button><button class="secondary" onclick="resetGaps()">Reset</button><div id="gapFeedback" class="feedback"></div></section>
-<section class="card" id="odd"><h2>7. Odd One Out · 6 minutes</h2><p>Choose the expression that does <b>not</b> form a natural collocation with the key word. Then give a natural alternative.</p><div id="oddArea"></div><button onclick="checkOdd()">Check answers</button><button class="secondary" onclick="resetOdd()">Reset</button><div id="oddFeedback" class="feedback"></div></section>
-<section class="card" id="skell"><h2>8. Predict before you search + SkELL investigation · 22 minutes</h2><h3>Part A — Predict (7 minutes)</h3><p>Before opening SkELL, add two words or phrases you think commonly occur with each key word. Do not use a translator or dictionary.</p><table><thead><tr><th>Key word</th><th>Known example</th><th>Your predictions</th></tr></thead><tbody><tr><td>experience</td><td>gain work experience</td><td><input type="text" placeholder="Prediction 1; prediction 2"></td></tr><tr><td>career</td><td>build a career</td><td><input type="text" placeholder="Prediction 1; prediction 2"></td></tr><tr><td>skills</td><td>develop professional skills</td><td><input type="text" placeholder="Prediction 1; prediction 2"></td></tr></tbody></table><p>Circle or mark one prediction you are least certain about. Check it in the next task.</p>
-<h3>Part B — SkELL investigation (15 minutes)</h3><p><b>Open SkELL:</b> <a href="https://skell.sketchengine.eu/" target="_blank" rel="noopener">https://skell.sketchengine.eu/</a></p><ol><li>Search one key word: <i>experience</i>, <i>career</i> or <i>skills</i>.</li><li>Use the Word Sketch or examples view available for the word. Look for combinations that fit the lesson topic.</li><li>Record three collocations you can verify from the displayed data.</li><li>Return to your predictions and mark each one <b>CONFIRMED</b>, <b>REVISE</b> or <b>NOT CLEAR FROM THE EXAMPLES</b>.</li><li>Choose one useful collocation and copy a short example or note its context.</li></ol>
-<table><thead><tr><th>Search word</th><th>Collocation found in SkELL</th><th>Short context / meaning</th><th>Decision about prediction</th></tr></thead><tbody><tr><td><input type="text" value="experience"></td><td><input type="text"></td><td><input type="text"></td><td><select><option>Choose…</option><option>CONFIRMED</option><option>REVISE</option><option>NOT CLEAR</option></select></td></tr><tr><td><input type="text" value="career"></td><td><input type="text"></td><td><input type="text"></td><td><select><option>Choose…</option><option>CONFIRMED</option><option>REVISE</option><option>NOT CLEAR</option></select></td></tr><tr><td><input type="text" value="skills"></td><td><input type="text"></td><td><input type="text"></td><td><select><option>Choose…</option><option>CONFIRMED</option><option>REVISE</option><option>NOT CLEAR</option></select></td></tr></tbody></table><div class="callout"><b>Keep it brief:</b> Do not write a long analysis. The aim is to find, check and record useful combinations.</div></section>
-<section class="card" id="repair"><h2>9. Quick collocation repair · 6 minutes</h2><p>Replace the unnatural or less suitable expression with a collocation from the lesson. Write the corrected phrase or sentence.</p><div id="repairArea"></div><button onclick="checkRepair()">Check answers</button><button class="secondary" onclick="resetRepair()">Reset</button><div id="repairFeedback" class="feedback"></div></section>
-<section class="card" id="situations"><h2>10. Choose and complete · 7 minutes</h2><p>Choose the best collocation from the box to complete each workplace or academic situation.</p><div class="wordbank">meet the requirements · work under pressure · acquire practical skills · take responsibility for · improve career prospects · submit an assignment</div><div id="situationArea"></div><button onclick="checkSituations()">Check answers</button><button class="secondary" onclick="resetSituations()">Reset</button><div id="situationFeedback" class="feedback"></div><p><b>Extension:</b> Choose one sentence and replace its subject or setting while keeping the collocation unchanged.</p><textarea placeholder="Rewrite one sentence here…"></textarea></section>
-<section class="card" id="exit"><h2>11. Exit ticket · 3 minutes</h2><ol><li>Write one new collocation from today’s lesson.</li><li>Write one collocation you checked in SkELL.</li><li>Complete the frame: “I can use __________ when I talk about __________.”</li></ol><textarea placeholder="My exit ticket…"></textarea><div class="callout">Self-check: Can you remember the whole phrase? Can you use it in a new sentence? Did you check at least one prediction in SkELL?</div></section>
-<section class="card" id="submissionPanel"><h2>12. Submit your work</h2><p>Enter your individual student code, check that you have completed the activities, and submit once. Your answers and available scores will be sent to the teacher’s response spreadsheet.</p><div class="exercise"><label for="studentCode"><b>Individual student code (required)</b></label><input id="studentCode" type="text" autocomplete="off" placeholder="e.g. S014" required><label for="groupCode">Group (optional)</label><input id="groupCode" type="text" placeholder="e.g. Group 2"></div><div class="submitbar"><button id="submitBtn" type="button" onclick="submitWork()">Submit my answers</button><span class="small">Do not include passwords or other sensitive information.</span></div><div id="submitStatus" role="status" aria-live="polite"></div><p class="small">The teacher must configure the submission endpoint before this button can send responses. The page will tell you if no endpoint has been configured.</p></section>
-<section class="card" id="answers" hidden><h2>Answer key</h2><p class="small">Open only after completing the activities.</p><details><summary>Exercise 2 — Matching</summary><p>1–C; 2–E; 3–D; 4–F; 5–B; 6–A; 7–G; 8–H.</p></details>
-<details><summary>Exercise 3 — Sentence completion</summary><ol><li>gain work experience</li><li>balance work and study</li><li>meet a deadline</li><li>develop professional skills</li><li>career prospects</li><li>heavy workload</li><li>work under pressure</li><li>take responsibility for</li></ol></details>
-<details><summary>Exercise 4 — Odd One Out</summary><ul><li>gain a deadline → meet a deadline</li><li>attend a contribution → make a contribution</li><li>submit a career → build a career</li><li>build a deadline → meet a deadline</li><li>meet work experience → gain work experience</li><li>make a qualification → gain a qualification</li></ul></details>
-<details><summary>Exercise 7 — Collocation repair</summary><ol><li>She wants to <b>gain work experience</b> during the summer.</li><li>Students must <b>submit an assignment</b> before Friday.</li><li>Working in a team can <b>develop communication skills</b> / contribute to the development of communication skills.</li><li>He hopes to <b>build a career</b> in teaching.</li><li>The collocation <b>balance work and study</b> is already correct; retain it and revise the sentence only for clarity if needed.</li></ol></details>
-<details><summary>Exercise 8 — Choose and complete</summary><ol><li>acquire practical skills</li><li>meet the requirements</li><li>submit an assignment</li><li>work under pressure</li><li>improve career prospects</li><li>take responsibility for</li></ol></details>
-<p class="small">Timing: Reading/orientation 7 min; Find chunks 7; Matching 7; Sentence completion 8; Odd One Out 6; Prediction 7; SkELL investigation 15; Repair 6; Choose and complete 7; Exit ticket 3; transitions/technical support 7. Total: 80 minutes.</p></section>
-</main></div><footer>Lesson 2 · Work and Study · B2 · Lexical Approach + SkELL</footer>
+<section id="goals">
+<h2>1. Your learning goals</h2>
+<p>By the end of this lesson, you will be able to:</p>
+<ul><li>recognise collocations as meaningful word partnerships;</li><li>complete and categorise common academic collocations;</li><li>notice combinations that may result from word-for-word translation;</li><li>check uncertain combinations against corpus examples in SkELL;</li><li>use at least six target collocations in a short spoken or written response.</li></ul>
+<div class="callout"><b>Lexical Approach tip</b><br>Learn <i>make progress</i> as one useful chunk—not as two unrelated words. Store the whole phrase with its meaning and an example.</div>
+<p class="small">The exercise formats in this lesson adapt principles discussed in Michael Lewis, <i>Implementing the Lexical Approach</i>, especially identifying chunks, matching, completing, categorising, sequencing and collocate deletion. The lesson-specific examples are newly written.</p>
+</section>
+
+<section id="chunks">
+<h2>2. Your collocation bank</h2>
+<p class="lead">Study the whole phrase, meaning and example. Then return to the phrases when you complete the activities.</p>
+<div class="grid">
+<div class="card"><div class="chunk">make progress</div><div class="meaning">improve or move forward</div><i>I make more progress when I review regularly.</i></div>
+<div class="card"><div class="chunk">meet a deadline</div><div class="meaning">finish by the required time</div><i>Planning helps me meet a deadline.</i></div>
+<div class="card"><div class="chunk">conduct research</div><div class="meaning">carry out a systematic investigation</div><i>Students conduct research before writing a paper.</i></div>
+<div class="card"><div class="chunk">draw a conclusion</div><div class="meaning">reach a judgement from evidence</div><i>Draw a conclusion from the data, not assumptions.</i></div>
+<div class="card"><div class="chunk">gain insight into</div><div class="meaning">develop deeper understanding</div><i>The article helped me gain insight into memory.</i></div>
+<div class="card"><div class="chunk">pose a challenge</div><div class="meaning">present a difficulty</div><i>Academic writing can pose a challenge.</i></div>
+<div class="card"><div class="chunk">heavy workload</div><div class="meaning">a large amount of work</div><i>A heavy workload can affect concentration.</i></div>
+<div class="card"><div class="chunk">deeply engaged</div><div class="meaning">very involved and interested</div><i>Students are deeply engaged in meaningful tasks.</i></div>
+<div class="card"><div class="chunk">highly effective</div><div class="meaning">producing a strong result</div><i>Retrieval practice can be highly effective.</i></div>
+<div class="card"><div class="chunk">broaden your knowledge</div><div class="meaning">increase what you know</div><i>Reading widely can broaden your knowledge.</i></div>
+<div class="card"><div class="chunk">take notes</div><div class="meaning">write down important information</div><i>I take notes in my own words.</i></div>
+<div class="card"><div class="chunk">pay attention to</div><div class="meaning">focus on</div><i>Pay attention to words that occur together.</i></div>
+</div>
+</section>
+
+<section id="reading">
+<h2>3. Read and notice</h2>
+<p>At university, students often face a <b>heavy workload</b> and have to <b>meet several deadlines</b> at once. Some try to memorise long lists of words, but this does not always help them <b>make progress</b> in academic writing. A more effective strategy is to <b>take notes</b> in meaningful groups and <b>pay attention to</b> words that regularly occur together. When students <b>conduct research</b>, they need to compare evidence before they <b>draw a conclusion</b>. Reading beyond the course syllabus can <b>broaden their knowledge</b> and help them <b>gain insight into</b> unfamiliar topics. These habits may <b>pose a challenge</b> at first, but learners are more <b>deeply engaged</b> when they can see how a strategy supports their goals.</p>
+<div class="callout"><b>Notice:</b> Which phrases contain a verb + noun? Which contain an adjective + noun? Which include a preposition?</div>
+<label>Verb + noun (write two examples): <input type="text" id="vn" placeholder="e.g. conduct research" style="width:100%"></label>
+<label>Adjective + noun (write one example): <input type="text" id="an" placeholder="e.g. heavy workload" style="width:100%"></label>
+<label>Phrase + preposition (write one example): <input type="text" id="prep" placeholder="e.g. pay attention to" style="width:100%"></label>
+</section>
+
+<section id="tasks">
+<h2>4. Practice zone</h2>
+<div class="task">
+<div class="taskhead"><span class="num">TASK 1</span><b>Match the parts</b></div>
+<p>Choose the best ending for each beginning.</p>
+<div id="matching"></div><button onclick="checkMatching()">Check answers</button><button class="secondary" onclick="resetMatching()">Try again</button><div id="matchFeedback" class="feedback"></div>
+</div>
+<div class="task">
+<div class="taskhead"><span class="num">TASK 2</span><b>Complete the collocation</b></div>
+<p>Choose the word that completes each phrase naturally.</p>
+<div id="gaps"></div><button onclick="checkGaps()">Check answers</button><button class="secondary" onclick="resetGaps()">Try again</button><div id="gapFeedback" class="feedback"></div>
+</div>
+<div class="task">
+<div class="taskhead"><span class="num">TASK 3</span><b>Collocate deletion: Odd One Out</b></div>
+<p>Select the option that does <b>not</b> form the intended conventional collocation. Then read the correction.</p>
+<div id="odd"></div><button onclick="checkOdd()">Check answers</button><div id="oddFeedback" class="feedback"></div>
+<div class="callout"><b>Remember:</b> these are preferred combinations in the context of this lesson. The goal is to learn a natural alternative, not to claim that every other phrase is impossible in every context.</div>
+</div>
+<div class="task">
+<div class="taskhead"><span class="num">TASK 4</span><b>Categorise the chunks</b></div>
+<p>Choose the best category for each collocation.</p>
+<div id="sort"></div><button onclick="checkSort()">Check answers</button><div id="sortFeedback" class="feedback"></div>
+</div>
+<div class="task">
+<div class="taskhead"><span class="num">TASK 5</span><b>Sequence a study routine</b></div>
+<p>Choose the most sensible order for the five steps. Enter the letters separated by arrows or spaces.</p>
+<ol><li>Review your notes and identify what you still need to work on.</li><li>Set a realistic goal and decide when you will finish.</li><li>Read relevant sources and take notes in meaningful chunks.</li><li>Compare the evidence and draw a conclusion.</li><li>Check your work and submit it before the deadline.</li></ol>
+<label>Your order: <input type="text" id="sequence" placeholder="B C A D E" style="width:100%"></label><button onclick="checkSequence()">Check order</button><div id="sequenceFeedback" class="feedback"></div>
+</div>
+</section>
+
+<section id="skell">
+<h2>5. SkELL corpus lab: hypothesis → evidence → decision</h2>
+<p>Use SkELL to check two collocations you are not fully confident about. Do not treat it as a translation tool: your task is to inspect how the phrase appears in real examples.</p>
+<ol><li><b>Predict:</b> before searching, write whether you think the phrase is natural and why.</li><li><b>Search:</b> open <a href="https://skell.sketchengine.eu/" target="_blank" rel="noopener">SkELL</a>, search the whole phrase, and read several examples. Use Word Sketch if available.</li><li><b>Notice:</b> record what the examples show about meaning, grammar or context.</li><li><b>Decide:</b> confirm, revise or leave your hypothesis uncertain. Do not decide from one example or frequency alone.</li><li><b>Record:</b> save the complete chunk, meaning, one example and your own sentence.</li></ol>
+<table><thead><tr><th>Target chunk</th><th>My first hypothesis</th><th>What I noticed in SkELL</th><th>Final decision</th></tr></thead><tbody>
+<tr><td><input type="text" placeholder="Collocation"></td><td><input type="text" placeholder="Natural? Why?"></td><td><input type="text" placeholder="Short evidence"></td><td><select><option>Choose…</option><option>Confirmed</option><option>Revised</option><option>Still uncertain</option></select></td></tr>
+<tr><td><input type="text" placeholder="Collocation"></td><td><input type="text" placeholder="Natural? Why?"></td><td><input type="text" placeholder="Short evidence"></td><td><select><option>Choose…</option><option>Confirmed</option><option>Revised</option><option>Still uncertain</option></select></td></tr>
+</tbody></table>
+<label>My own sentence with one checked collocation:<textarea rows="3" style="width:100%" placeholder="Write a sentence of your own…"></textarea></label>
+<button class="secondary" onclick="window.print()">Print / save this lesson as PDF</button>
+</section>
+
+<section id="use">
+<h2>6. Use the collocations</h2>
+<p>Choose one task.</p>
+<div class="grid">
+<div class="card"><h3>Writing</h3><p>Write 100–130 words explaining how you organise your studies and handle deadlines. Use at least six target collocations.</p></div>
+<div class="card"><h3>Speaking</h3><p>Record a 60–90-second response to: <i>“What makes a study strategy effective?”</i> Use at least six target collocations.</p></div>
+</div>
+<h3>Self-assessment</h3>
+<label><input type="checkbox"> I used at least six different collocations.</label>
+<label><input type="checkbox"> I checked that the combinations fit the context.</label>
+<label><input type="checkbox"> I used SkELL evidence to check two phrases.</label>
+<label><input type="checkbox"> I can explain one phrase that differs from a word-for-word translation in my first language.</label>
+<div class="callout"><b>Exit ticket:</b> Write one collocation you learned, one combination you had to correct, and one original sentence.</div>
+</section>
+
+<section id="answers">
+<h2>7. Answer key</h2>
+<p id="answerLockNote" class="locked-note">The answer key is locked. Complete each practice task and press its <b>Check</b> button first.</p>
+<button id="answerToggle" class="secondary unlock-btn" onclick="toggleAnswers()" disabled>Complete the practice tasks first</button>
+<div class="answer" id="answerBox" hidden>
+<p><b>Task 1 — Matching</b><br>make → progress; meet → a deadline; conduct → research; draw → a conclusion; broaden → your knowledge; gain → insight into; pay → attention to; pose → a challenge.</p>
+<p><b>Task 2 — Completion</b><br>1 deadline; 2 research; 3 conclusion; 4 progress; 5 insight; 6 workload; 7 engaged; 8 effective.</p>
+<p><b>Task 3 — Odd One Out</b><br>a homework → do homework / complete an assignment; a progress → make progress; a conclusion after conduct → draw/reach a conclusion; heavy knowledge → broad/deep knowledge; a deadline after draw → meet a deadline; a research → conduct/do research.</p>
+<p><b>Task 4 — Categories</b><br>Planning and deadlines: meet a deadline, make progress, heavy workload. Research and reasoning: conduct research, draw a conclusion, gain insight into. Engagement and attention: pay attention to, deeply engaged, broaden your knowledge.</p>
+<p><b>Task 5 — Sequence</b><br>Suggested order: B → C → A → D → E. A different order may be reasonable if explained, but the auto-check key uses this order.</p>
+</div>
+</section>
+<footer>Digital lesson • Academic Success: Learning in Collocations • Designed for B2 English philology students</footer>
+</main>
 <script>
 const matchItems=[
-["apply","a job","a contribution","a qualification"],["attend","a lecture","a career","a deadline"],["submit","an assignment","practical skills","the requirements"],["build","a career","a lecture","a contribution"],["gain","a qualification","a job","a lecture"],["make","a contribution","a career","an assignment"],["meet","the requirements","a lecture","a contribution"],["acquire","practical skills","a deadline","a career"]];
-const matchCorrect=["a job","a lecture","an assignment","a career","a qualification","a contribution","the requirements","practical skills"];
-function buildMatching(){document.getElementById('matchArea').innerHTML=matchItems.map((x,i)=>`<p><b>${i+1}. ${x[0]}</b> <select id="m${i}"><option value="">Choose an ending…</option>${[x[1],x[2],x[3]].map(y=>`<option>${y}</option>`).join('')}</select></p>`).join('')}
-function checkMatching(){let n=0;matchCorrect.forEach((a,i)=>{if(document.getElementById('m'+i).value===a)n++});document.getElementById('matchFeedback').innerHTML=`${n}/8 correct. ${n===8?'Excellent — read each full collocation aloud.':'Review the collocation bank and try again.'}`;document.getElementById('matchFeedback').className='feedback '+(n===8?'correct':'incorrect')}
-function resetMatching(){buildMatching();document.getElementById('matchFeedback').textContent=''}
-const gaps=[
-["An internship is a good way to ____ before graduation.","gain work experience"],
-["Students who have jobs often need to ____ carefully.","balance work and study"],
-["Please check your calendar so that you can ____.","meet a deadline"],
-["Team projects can help students ____ such as communication and planning.","develop professional skills"],
-["People who can communicate in several languages may have better ____.","career prospects"],
-["During the examination period, students may have a ____.","heavy workload"],
-["Employees sometimes need to ____ when several tasks are urgent.","work under pressure"],
-["Students should ____ their own learning.","take responsibility for"]
+["make",["a conclusion","your knowledge","a deadline","research","progress","attention to","insight into","a challenge"],4],
+["meet",["a conclusion","your knowledge","a deadline","research","progress","attention to","insight into","a challenge"],2],
+["conduct",["a conclusion","your knowledge","a deadline","research","progress","attention to","insight into","a challenge"],3],
+["draw",["a conclusion","your knowledge","a deadline","research","progress","attention to","insight into","a challenge"],0],
+["broaden",["a conclusion","your knowledge","a deadline","research","progress","attention to","insight into","a challenge"],1],
+["gain",["a conclusion","your knowledge","a deadline","research","progress","attention to","insight into","a challenge"],6],
+["pay",["a conclusion","your knowledge","a deadline","research","progress","attention to","insight into","a challenge"],5],
+["pose",["a conclusion","your knowledge","a deadline","research","progress","attention to","insight into","a challenge"],7]];
+const gapItems=[
+["We must meet the ____ before Friday.",["deadline","progress","research"],0],
+["The students conducted ____ before the presentation.",["conclusion","research","workload"],1],
+"We drew a balanced ____ from the evidence.".replace("We drew a balanced ____ from the evidence.",""),
+["Weekly revision can help learners make steady ____.",["progress","deadline","insight"],0],
+["The article gave me useful ____ into memory.",["workload","insight","deadline"],1],
+["A heavy ____ can make concentration difficult.",["workload","conclusion","research"],0],
+["Students are more deeply ____ in meaningful tasks.",["effective","engaged","broad"],1],
+["This is a highly ____ way to review collocations.",["effective","heavy","deeply"],0]
 ];
-function buildGaps(){document.getElementById('gapArea').innerHTML=gaps.map((x,i)=>`<div class="exercise">${i+1}. ${x[0].replace('____',`<input id="g${i}" type="text" placeholder="Complete collocation">`)}</div>`).join('')}
-function norm(s){return s.toLowerCase().replace(/[.,!?]/g,'').replace(/\s+/g,' ').trim()}
-function checkGaps(){let n=0;gaps.forEach((x,i)=>{if(norm(document.getElementById('g'+i).value)===norm(x[1]))n++});feedback('gapFeedback',n,8)}
-function resetGaps(){buildGaps();document.getElementById('gapFeedback').textContent=''}
-const odds=[
-["gain work experience · gain a qualification · gain practical skills · gain a deadline",3,"meet a deadline"],
-["attend a lecture · attend a meeting · attend a course · attend a contribution",3,"make a contribution"],
-["submit an assignment · submit an application · submit a report · submit a career",3,"build a career"],
-["build a career · build confidence · build relationships · build a deadline",3,"meet a deadline"],
-["meet the requirements · meet a deadline · meet a target · meet work experience",3,"gain work experience"],
-["make a contribution · make progress · make a decision · make a qualification",3,"gain a qualification"]];
-function buildOdd(){document.getElementById('oddArea').innerHTML=odds.map((x,i)=>`<div class="exercise"><p><b>${i+1}.</b> ${x[0]}</p><label>Choose the unnatural collocation</label><select id="o${i}"><option value="">Choose…</option>${x[0].split(' · ').map((v,j)=>`<option value="${j}">${v}</option>`).join('')}</select><label>Correct it</label><input id="oc${i}" type="text" placeholder="Write a natural alternative"></div>`).join('')}
-function checkOdd(){let n=0;odds.forEach((x,i)=>{let v=document.getElementById('o'+i).value;let c=norm(document.getElementById('oc'+i).value);if(Number(v)===x[1]&&c===norm(x[2]))n++});feedback('oddFeedback',n,6)}
-function resetOdd(){buildOdd();document.getElementById('oddFeedback').textContent=''}
-const repairs=[
-["She wants to get work experience during the summer.","gain work experience"],
-["Students must hand in their assignment before Friday.","submit an assignment"],
-["Working in a team can make a contribution to communication skills.","develop communication skills"],
-["He hopes to make a career in teaching.","build a career"],
-["It is hard to manage employment and university; she must balance work and study.","balance work and study"]];
-function buildRepair(){document.getElementById('repairArea').innerHTML=repairs.map((x,i)=>`<div class="exercise"><p>${i+1}. ${x[0]}</p><input id="r${i}" type="text" placeholder="Write the corrected collocation or sentence"></div>`).join('')}
-function checkRepair(){let n=0;repairs.forEach((x,i)=>{let v=norm(document.getElementById('r'+i).value);if(v===norm(x[1])||v.includes(norm(x[1])))n++});feedback('repairFeedback',n,5)}
-function resetRepair(){buildRepair();document.getElementById('repairFeedback').textContent=''}
-const situations=[
-["A student wants to learn by doing real tasks during an internship. They hope to ____.","acquire practical skills"],
-["The job advert lists three essential qualifications. Applicants must ____.","meet the requirements"],
-["The deadline is tomorrow, so I need to ____ today.","submit an assignment"],
-["When several customers need help at once, staff must ____.","work under pressure"],
-["Learning another language may ____.","improve career prospects"],
-["Group members should ____ their part of the project.","take responsibility for"]];
-function buildSituations(){document.getElementById('situationArea').innerHTML=situations.map((x,i)=>`<div class="exercise">${i+1}. ${x[0].replace('____',`<input id="s${i}" type="text" placeholder="Complete collocation">`)}</div>`).join('')}
-function checkSituations(){let n=0;situations.forEach((x,i)=>{if(norm(document.getElementById('s'+i).value)===norm(x[1]))n++});feedback('situationFeedback',n,6)}
-function resetSituations(){buildSituations();document.getElementById('situationFeedback').textContent=''}
-function feedback(id,n,total){let el=document.getElementById(id);el.textContent=`${n}/${total} correct. `+(n===total?'Well done!':'Check the collocation bank or answer key, then try again.');el.className='feedback '+(n===total?'correct':'incorrect')}
-buildMatching();buildGaps();buildOdd();buildRepair();buildSituations();
-
-// Answer key remains hidden until all five scored activities have been checked.
-const checkedActivities = new Set();
-function markActivityChecked(name) {
-  checkedActivities.add(name);
-  const answerSection = document.getElementById('answers');
-  if (checkedActivities.size >= 5) {
-    answerSection.hidden = false;
-    const note = answerSection.querySelector('p.small');
-    if (note) note.textContent = 'All five scored activities have been checked. You may now review the answers.';
-  }
+gapItems[2]=["We drew a balanced ____ from the evidence.",["conclusion","research","workload"],0];
+const oddItems=[
+["Which is the odd one out? MAKE: progress / a mistake / a decision / a homework",3,"Use “do homework” or “complete an assignment”."],
+["Which is the odd one out? MEET: a deadline / a requirement / a friend / a progress",3,"Use “make progress”."],
+["Which is the odd one out? CONDUCT: research / an experiment / a survey / a conclusion",3,"Use “draw/reach a conclusion”."],
+["Which is the odd one out? HEAVY: workload / traffic / rain / knowledge",3,"In this context, say “broad/deep knowledge”."],
+["Which is the odd one out? DRAW: a conclusion / a comparison / attention / a deadline",3,"Use “meet a deadline”."],
+["Which is the odd one out? PAY: attention / a visit / a compliment / a research",3,"Use “conduct/do research”."]
+];
+const sortItems=[
+["meet a deadline","Planning and deadlines",["Planning and deadlines","Research and reasoning","Engagement and attention"]],
+["make progress","Planning and deadlines",["Planning and deadlines","Research and reasoning","Engagement and attention"]],
+["heavy workload","Planning and deadlines",["Planning and deadlines","Research and reasoning","Engagement and attention"]],
+["conduct research","Research and reasoning",["Planning and deadlines","Research and reasoning","Engagement and attention"]],
+["draw a conclusion","Research and reasoning",["Planning and deadlines","Research and reasoning","Engagement and attention"]],
+["gain insight into a topic","Research and reasoning",["Planning and deadlines","Research and reasoning","Engagement and attention"]],
+["pay attention to","Engagement and attention",["Planning and deadlines","Research and reasoning","Engagement and attention"]],
+["be deeply engaged","Engagement and attention",["Planning and deadlines","Research and reasoning","Engagement and attention"]],
+["broaden your knowledge","Engagement and attention",["Planning and deadlines","Research and reasoning","Engagement and attention"]]
+];
+function el(tag,attrs={},text=""){const e=document.createElement(tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));if(text)e.textContent=text;return e}
+function build(){
+ const m=document.getElementById("matching");
+ matchItems.forEach((it,i)=>{let l=el("label",{},(i+1)+". "+it[0]+" ");let s=el("select",{id:"m"+i});s.appendChild(el("option",{value:""},"Choose ending…"));it[1].forEach((v,j)=>s.appendChild(el("option",{value:j},v)));l.appendChild(s);m.appendChild(l)});
+ const g=document.getElementById("gaps");
+ gapItems.forEach((it,i)=>{let l=el("label",{},(i+1)+". "+it[0]);let s=el("select",{id:"g"+i});s.appendChild(el("option",{value:""},"Choose…"));it[1].forEach((v,j)=>s.appendChild(el("option",{value:j},v)));l.appendChild(s);g.appendChild(l)});
+ const o=document.getElementById("odd");
+ oddItems.forEach((it,i)=>{let l=el("label",{},(i+1)+". "+it[0]);let s=el("select",{id:"o"+i});s.appendChild(el("option",{value:""},"Choose the odd item…"));it[0].split(": ")[1].split(" / ").forEach((v,j)=>s.appendChild(el("option",{value:j},v)));l.appendChild(s);let p=el("p",{class:"small",id:"oc"+i},it[2]);p.style.display="none";o.appendChild(l);o.appendChild(p)});
+ const so=document.getElementById("sort");
+ sortItems.forEach((it,i)=>{let l=el("label",{},it[0]+" ");let s=el("select",{id:"s"+i});s.appendChild(el("option",{value:""},"Choose category…"));it[2].forEach(v=>s.appendChild(el("option",{value:v},v)));l.appendChild(s);so.appendChild(l)});
 }
-const _checkMatching = checkMatching;
-checkMatching = function(){ _checkMatching(); markActivityChecked('matching'); };
-const _checkGaps = checkGaps;
-checkGaps = function(){ _checkGaps(); markActivityChecked('gaps'); };
-const _checkOdd = checkOdd;
-checkOdd = function(){ _checkOdd(); markActivityChecked('odd'); };
-const _checkRepair = checkRepair;
-checkRepair = function(){ _checkRepair(); markActivityChecked('repair'); };
-const _checkSituations = checkSituations;
-checkSituations = function(){ _checkSituations(); markActivityChecked('situations'); };
+function feedback(id,msg,ok){let e=document.getElementById(id);e.textContent=msg;e.className="feedback "+(ok?"correct":"incorrect")}
+let checkedTasks={matching:false,gaps:false,odd:false,sort:false,sequence:false};
+function updateAnswerLock(){const ready=Object.values(checkedTasks).every(Boolean);const b=document.getElementById("answerToggle");b.disabled=!ready;b.textContent=ready?"Show / hide answer key":"Complete and check all five practice tasks first";document.getElementById("answerLockNote").textContent=ready?"You have checked all five practice tasks. You can now open the answer key.":"The answer key is locked. Complete each practice task and press its Check button first.";}
+function checkMatching(){let n=0;matchItems.forEach((it,i)=>{if(document.getElementById("m"+i).value==it[2])n++});checkedTasks.matching=true;updateAnswerLock();feedback("matchFeedback",n+" / "+matchItems.length+" correct.",n===matchItems.length)}
+function resetMatching(){matchItems.forEach((_,i)=>document.getElementById("m"+i).value="");document.getElementById("matchFeedback").className="feedback"}
+function checkGaps(){let n=0;gapItems.forEach((it,i)=>{if(document.getElementById("g"+i).value==it[2])n++});checkedTasks.gaps=true;updateAnswerLock();feedback("gapFeedback",n+" / "+gapItems.length+" correct.",n===gapItems.length)}
+function resetGaps(){gapItems.forEach((_,i)=>document.getElementById("g"+i).value="");document.getElementById("gapFeedback").className="feedback"}
+function checkOdd(){let n=0;oddItems.forEach((it,i)=>{let v=document.getElementById("o"+i).value;if(v==it[0].split(": ")[1].split(" / ").length-1){n++;document.getElementById("oc"+i).style.display="block"}else document.getElementById("oc"+i).style.display="none"});checkedTasks.odd=true;updateAnswerLock();feedback("oddFeedback",n+" / "+oddItems.length+" correct. Corrections appear below correct choices.",n===oddItems.length)}
+function checkSort(){let n=0;sortItems.forEach((it,i)=>{if(document.getElementById("s"+i).value===it[1])n++});checkedTasks.sort=true;updateAnswerLock();feedback("sortFeedback",n+" / "+sortItems.length+" correct.",n===sortItems.length)}
+function checkSequence(){let s=document.getElementById("sequence").value.toUpperCase().replace(/[^ABCDE]/g,"");checkedTasks.sequence=true;updateAnswerLock();feedback("sequenceFeedback",s==="BCADE"?"Correct: B → C → A → D → E.":"Suggested order: B → C → A → D → E.",s==="BCADE")}
+function toggleAnswers(){if(!Object.values(checkedTasks).every(Boolean))return;let e=document.getElementById("answerBox");const opening=e.hidden;e.hidden=!opening;e.style.display=opening?"block":"none";document.getElementById("answerToggle").textContent=opening?"Hide answer key":"Show answer key"}
+build();
+</script>
 
-// SET THIS to the deployed Google Apps Script Web App URL before publishing.
+<section id="submissionPanel" style="max-width:900px;margin:24px auto;padding:24px;background:#fff;border:1px solid #d8e6dc;border-radius:16px;font-family:Arial,sans-serif;color:#20312a"><h2>Submit your work</h2><p>Enter your individual student code and send your answers to your teacher.</p><label for="studentCode"><b>Individual student code (required)</b></label><input id="studentCode" autocomplete="off" placeholder="e.g. S014" style="display:block;width:100%;max-width:360px;padding:12px;margin:8px 0 16px;border:1px solid #b7cabe;border-radius:8px"><label for="groupCode"><b>Group (optional)</b></label><input id="groupCode" autocomplete="off" placeholder="e.g. Group 2" style="display:block;width:100%;max-width:360px;padding:12px;margin:8px 0 16px;border:1px solid #b7cabe;border-radius:8px"><button id="submitBtn" type="button" onclick="submitLesson1()" style="background:#176b4d;color:white;border:0;padding:12px 18px;border-radius:8px;font-weight:bold;cursor:pointer">Submit my answers</button><p id="submitStatus" role="status" aria-live="polite"></p><small>Teacher: configure the Apps Script endpoint before publishing. A submission message does not replace checking the spreadsheet.</small></section>
+<script>
 const SUBMISSION_ENDPOINT = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
-function collectResponses(){
-  const answers={};
-  let fieldIndex=0;
-  document.querySelectorAll('input, textarea, select').forEach((el)=>{
-    if(['studentCode','groupCode','submitBtn'].includes(el.id) || el.type==='button' || el.type==='submit') return;
-    fieldIndex++;
-    const key=el.id || el.name || ('field_'+String(fieldIndex).padStart(3,'0'));
-    answers[key]=(el.value||'').trim();
-  });
-  const score={};
-  let n=0;
-  matchCorrect.forEach((a,i)=>{if(document.getElementById('m'+i)?.value===a)n++}); score.matching={score:n,max:8};
-  n=0; gaps.forEach((x,i)=>{if(norm(document.getElementById('g'+i)?.value||'')===norm(x[1]))n++}); score.gapFill={score:n,max:8};
-  n=0; odds.forEach((x,i)=>{if(Number(document.getElementById('o'+i)?.value)===x[1] && norm(document.getElementById('oc'+i)?.value||'')===norm(x[2]))n++}); score.oddOneOut={score:n,max:6};
-  n=0; repairs.forEach((x,i)=>{const v=norm(document.getElementById('r'+i)?.value||'');if(v===norm(x[1])||v.includes(norm(x[1])))n++}); score.collocationRepair={score:n,max:5};
-  n=0; situations.forEach((x,i)=>{if(norm(document.getElementById('s'+i)?.value||'')===norm(x[1]))n++}); score.chooseComplete={score:n,max:6};
-  score.autoTotal={score:score.matching.score+score.gapFill.score+score.oddOneOut.score+score.collocationRepair.score+score.chooseComplete.score,max:33};
-  return {lesson:'Lesson 2 — Work and Study', studentCode:document.getElementById('studentCode').value.trim(), group:document.getElementById('groupCode').value.trim(), submittedAt:new Date().toISOString(), scores:score, answers:answers, userAgent:navigator.userAgent};
+function submitLesson1(){
+ const status=document.getElementById('submitStatus'), btn=document.getElementById('submitBtn'), code=document.getElementById('studentCode').value.trim();
+ if(!code){status.textContent='Please enter your individual student code.';return;}
+ if(SUBMISSION_ENDPOINT.includes('PASTE_YOUR_GOOGLE_APPS_SCRIPT')){status.textContent='Not connected yet: the teacher must configure the submission endpoint.';return;}
+ const answers={}; let i=0;
+ document.querySelectorAll('input,textarea,select').forEach(el=>{if(['studentCode','groupCode','submitBtn'].includes(el.id)||el.type==='button'||el.type==='submit')return;i++;const key=el.id||el.name||('field_'+String(i).padStart(3,'0'));answers[key]=el.type==='checkbox'?el.checked:el.value;});
+ const payload={lesson:'Lesson 1 — Academic Success',studentCode:code,group:document.getElementById('groupCode').value.trim(),submittedAt:new Date().toISOString(),scores:{},answers:answers};
+ btn.disabled=true;status.textContent='Sending…';
+ fetch(SUBMISSION_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
+ .then(()=>{status.textContent='Submission request sent. Please keep your code; the teacher should confirm that the row appears in the spreadsheet.';btn.textContent='Submission sent';})
+ .catch(()=>{status.textContent='Could not send. Check your internet connection and try again.';btn.disabled=false;});
 }
-async function submitWork(){
- const status=document.getElementById('submitStatus'), btn=document.getElementById('submitBtn');
- const code=document.getElementById('studentCode').value.trim();
- if(!code){status.className='status err';status.textContent='Please enter your individual student code first.';document.getElementById('studentCode').focus();return;}
- if(SUBMISSION_ENDPOINT.includes('PASTE_YOUR_GOOGLE_APPS_SCRIPT')){status.className='status warn';status.textContent='Submission is not configured yet. The teacher must paste the deployed Apps Script URL into SUBMISSION_ENDPOINT and republish the HTML.';return;}
- const payload=collectResponses(); btn.disabled=true; btn.textContent='Sending…'; status.className='status warn'; status.textContent='Sending your answers…';
- try{
-   // text/plain avoids a CORS preflight; Apps Script receives and stores the JSON body.
-   await fetch(SUBMISSION_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)});
-   status.className='status ok';status.textContent='Your submission request has been sent. Because the browser cannot read the server confirmation in this mode, please keep your student code and ask the teacher to confirm that your response appears in the spreadsheet.';
-   btn.textContent='Submission sent';
- }catch(e){status.className='status err';status.textContent='Could not send the answers. Check your internet connection and try again, or tell your teacher.';btn.disabled=false;btn.textContent='Try again';}
-}
-</script></body></html>
+</script>
+</body></html>
