@@ -35,7 +35,7 @@ footer{text-align:center;padding:25px;color:var(--muted);font-size:.9rem}
 <header><div class="hero"><div class="eyebrow">English Philology · Lexical Collocational Competence</div><h1>WORK<br>AND STUDY</h1><div class="subtitle">Lesson 2 · An interactive e-book for developing lexical collocational competence through the Lexical Approach and SkELL corpus investigation.</div><div class="meta"><span class="pill">B2 level</span><span class="pill">80 minutes</span><span class="pill">Read · Practise · Investigate</span></div></div></header>
 <div class="layout">
 <nav><strong>IN THIS LESSON</strong><div>
-<a href="#outcomes">1. Learning outcomes</a><a href="#bank">2. Collocation bank</a><a href="#reading">3. Reading</a><a href="#chunks">4. Find the chunks</a><a href="#matching">5. Matching</a><a href="#complete">6. Complete sentences</a><a href="#odd">7. Odd one out</a><a href="#skell">8. SkELL investigation</a><a href="#repair">9. Collocation repair</a><a href="#situations">10. Choose and complete</a><a href="#exit">11. Exit ticket</a></div></nav>
+<a href="#outcomes">1. Learning outcomes</a><a href="#bank">2. Collocation bank</a><a href="#reading">3. Reading</a><a href="#chunks">4. Find the chunks</a><a href="#matching">5. Matching</a><a href="#complete">6. Complete sentences</a><a href="#odd">7. Odd one out</a><a href="#skell">8. SkELL investigation</a><a href="#repair">9. Collocation repair</a><a href="#situations">10. Choose and complete</a><a href="#b2quiz">11. Collocation test B2</a><a href="#b2plusquiz">12. Collocation test B2+</a><a href="#exit">13. Exit ticket</a></div></nav>
 <main>
 <section class="card" id="outcomes"><h2>1. Learning outcomes</h2><p>By the end of the lesson, you will be able to:</p><ul><li>recognise common collocations related to work, study and career development;</li><li>retrieve useful lexical chunks as complete units;</li><li>predict likely word partnerships and check selected predictions in SkELL;</li><li>use collocations accurately in short workplace and academic contexts.</li></ul><div class="callout"><b>Lexical principle</b><br>Learn words in recurring combinations and useful sentence frames. Notice patterns, retrieve whole chunks and practise adapting them to new contexts.</div></section>
 <section class="card" id="bank"><h2>2. Collocation bank</h2><p>Study the expressions as complete units. Read the example aloud and notice which words occur together.</p>
@@ -73,8 +73,12 @@ footer{text-align:center;padding:25px;color:var(--muted);font-size:.9rem}
 <table><thead><tr><th>Search word</th><th>Collocation found in SkELL</th><th>Short context / meaning</th><th>Decision about prediction</th></tr></thead><tbody><tr><td><input type="text" value="experience"></td><td><input type="text"></td><td><input type="text"></td><td><select><option>Choose…</option><option>CONFIRMED</option><option>REVISE</option><option>NOT CLEAR</option></select></td></tr><tr><td><input type="text" value="career"></td><td><input type="text"></td><td><input type="text"></td><td><select><option>Choose…</option><option>CONFIRMED</option><option>REVISE</option><option>NOT CLEAR</option></select></td></tr><tr><td><input type="text" value="skills"></td><td><input type="text"></td><td><input type="text"></td><td><select><option>Choose…</option><option>CONFIRMED</option><option>REVISE</option><option>NOT CLEAR</option></select></td></tr></tbody></table><div class="callout"><b>Keep it brief:</b> Do not write a long analysis. The aim is to find, check and record useful combinations.</div></section>
 <section class="card" id="repair"><h2>9. Quick collocation repair · 6 minutes</h2><p>Replace the unnatural or less suitable expression with a collocation from the lesson. Write the corrected phrase or sentence.</p><div id="repairArea"></div><button onclick="checkRepair()">Check answers</button><button class="secondary" onclick="resetRepair()">Reset</button><div id="repairFeedback" class="feedback"></div></section>
 <section class="card" id="situations"><h2>10. Choose and complete · 7 minutes</h2><p>Choose the best collocation from the box to complete each workplace or academic situation.</p><div class="wordbank">meet the requirements · work under pressure · acquire practical skills · take responsibility for · improve career prospects · submit an assignment</div><div id="situationArea"></div><button onclick="checkSituations()">Check answers</button><button class="secondary" onclick="resetSituations()">Reset</button><div id="situationFeedback" class="feedback"></div><p><b>Extension:</b> Choose one sentence and replace its subject or setting while keeping the collocation unchanged.</p><textarea placeholder="Rewrite one sentence here…"></textarea></section>
-<section class="card" id="exit"><h2>11. Exit ticket · 3 minutes</h2><ol><li>Write one new collocation from today’s lesson.</li><li>Write one collocation you checked in SkELL.</li><li>Complete the frame: “I can use __________ when I talk about __________.”</li></ol><textarea placeholder="My exit ticket…"></textarea><div class="callout">Self-check: Can you remember the whole phrase? Can you use it in a new sentence? Did you check at least one prediction in SkELL?</div></section>
-<section class="card" id="submissionPanel"><h2>12. Submit your work</h2><p>Enter your individual student code, check that you have completed the activities, and submit once. Your answers and available scores will be sent to the teacher’s response spreadsheet.</p><div class="exercise"><label for="studentCode"><b>Individual student code (required)</b></label><input id="studentCode" type="text" autocomplete="off" placeholder="e.g. S014" required><label for="groupCode">Group (optional)</label><input id="groupCode" type="text" placeholder="e.g. Group 2"></div><div class="submitbar"><button id="submitBtn" type="button" onclick="submitWork()">Submit my answers</button><span class="small">Do not include passwords or other sensitive information.</span></div><div id="submitStatus" role="status" aria-live="polite"></div><p class="small">The teacher must configure the submission endpoint before this button can send responses. The page will tell you if no endpoint has been configured.</p></section>
+
+<section class="card" id="b2quiz"><h2>11. Collocation test · B2</h2><p>Choose the collocation that matches each meaning. Select one answer for every question, then check your score.</p><div id="b2QuizArea"></div><button onclick="checkCollocationQuiz('b2')">Check B2 answers</button><button class="secondary" onclick="resetCollocationQuiz('b2')">Reset</button><div id="b2QuizFeedback" class="feedback" aria-live="polite"></div></section>
+<section class="card" id="b2plusquiz"><h2>12. Collocation test · B2+</h2><p>Choose the most accurate collocation or phrase for each definition. Pay attention to meaning and word combinations.</p><div id="b2plusQuizArea"></div><button onclick="checkCollocationQuiz('b2plus')">Check B2+ answers</button><button class="secondary" onclick="resetCollocationQuiz('b2plus')">Reset</button><div id="b2plusQuizFeedback" class="feedback" aria-live="polite"></div></section>
+<section class="card" id="exit"><h2>13. Exit ticket · 3 minutes</h2><ol><li>Write one new collocation from today’s lesson.</li><li>Write one collocation you checked in SkELL.</li><li>Complete the frame: “I can use __________ when I talk about __________.”</li></ol><textarea placeholder="My exit ticket…"></textarea><div class="callout">Self-check: Can you remember the whole phrase? Can you use it in a new sentence? Did you check at least one prediction in SkELL?</div></section>
+<section class="card" id="submissionPanel"><h2>14. Submit your work</h2><p>Enter your first name, surname and group number, check that you have completed the activities, and submit once. Your answers and available scores will be sent to the teacher’s response spreadsheet.</p><div class="exercise"><label for="firstName"><b>First name (required)</b></label><input id="firstName" type="text" autocomplete="given-name" placeholder="Enter your first name" required><label for="lastName"><b>Surname (required)</b></label><input id="lastName" type="text" autocomplete="family-name" placeholder="Enter your surname" required><label for="groupNumber"><b>Group number (required)</b></label><input id="groupNumber" type="text" autocomplete="off" placeholder="e.g.  Group 2 or 221" required></div><div class="submitbar"><button id="submitBtn" type="button" onclick="submitWork()">Submit my answers</button><span class="small">Do not include passwords or other sensitive information.</span></div><div id="submitStatus" role="status" aria-live="polite"></div><p class="small">The teacher must configure the submission endpoint before this button can send responses. The page will tell you if no endpoint has been configured.</p></section>
+
 </main></div><footer>Lesson 2 · Work and Study · B2 · Lexical Approach + SkELL</footer>
 <script>
 const matchItems=[
@@ -126,8 +130,39 @@ const situations=[
 function buildSituations(){document.getElementById('situationArea').innerHTML=situations.map((x,i)=>`<div class="exercise">${i+1}. ${x[0].replace('____',`<input id="s${i}" type="text" placeholder="Complete collocation">`)}</div>`).join('')}
 function checkSituations(){let n=0;situations.forEach((x,i)=>{if(norm(document.getElementById('s'+i).value)===norm(x[1]))n++});feedback('situationFeedback',n,6)}
 function resetSituations(){buildSituations();document.getElementById('situationFeedback').textContent=''}
-function feedback(id,n,total){let el=document.getElementById(id);el.textContent=`${n}/${total} correct. `+(n===total?'Well done!':'Check the collocation bank or answer key, then try again.');el.className='feedback '+(n===total?'correct':'incorrect')}
+function feedback(id,n,total){let el=document.getElementById(id);el.textContent=`${n}/${total} correct. `+(n===total?'Well done!':'Review the collocation bank and try again.');el.className='feedback '+(n===total?'correct':'incorrect')}
 buildMatching();buildGaps();buildOdd();buildRepair();buildSituations();
+
+const collocationQuizzes={
+b2:[
+{q:'Which collocation means “the ability to express ideas easily and fluently”?',o:['facility of expression','a line of achievement','skilled labour','plodding industry'],a:0},
+{q:'Which collocation means “work requiring training and practical skills”?',o:['a piece of work','skilled labour','a diligent reader','facility of expression'],a:1},
+{q:'Which phrase describes a person who reads attentively and regularly?',o:['a skilled worker','a diligent reader','a line of achievement','a piece of work'],a:1},
+{q:'Which phrase means “a sequence or course of accomplishments”?',o:['a piece of work','plodding industry','a line of achievement','skilled labour'],a:2},
+{q:'Which phrase means “steady, painstaking effort”?',o:['facility of expression','plodding industry','a line of achievement','a diligent reader'],a:1},
+{q:'Which phrase means “to deal successfully with obstacles and problems”?',o:['overcome hindrances and difficulties','learn a trade','make an achievement','express a facility'],a:0},
+{q:'Which phrase refers to one particular task or assignment?',o:['a line of achievement','a piece of work','facility of expression','plodding industry'],a:1},
+{q:'Which collocation means “to acquire the skills needed for a particular occupation”?',o:['learn a trade','read an achievement','make a facility','do a profession'],a:0},
+{q:'Which word describes straining and exhausting work?',o:['facility','toil','achievement','instruction'],a:1},
+{q:'Which phrase describes a profession associated with specialised learning?',o:['a learned profession','a piece of work','plodding industry','facility of expression'],a:0}
+],
+b2plus:[
+{q:'Which phrase describes sustained, painstaking effort?',o:['plodding industry','facility of expression','a line of achievement','a learned profession'],a:0},
+{q:'Which phrase refers to expressing thoughts without apparent difficulty?',o:['skilled labour','facility of expression','a piece of work','overcome hindrances and difficulties'],a:1},
+{q:'Which phrase describes a professional path marked by accomplishments?',o:['a diligent reader','a line of achievement','skilled labour','a piece of work'],a:1},
+{q:'Which phrase expresses concentrating one’s powers on a task?',o:['a diligent reader','application with utmost intensity','a line of achievement','skilled labour'],a:1},
+{q:'Which phrase describes work requiring practical training and technical ability?',o:['a learned profession','skilled labour','facility of expression','a line of achievement'],a:1},
+{q:'Which phrase means successfully dealing with obstacles and setbacks?',o:['overcome hindrances and difficulties','facility of expression','a piece of work','a learned profession'],a:0},
+{q:'Which phrase refers to a profession associated with scholarship or specialised learning?',o:['a diligent reader','a learned profession','plodding industry','a piece of work'],a:1},
+{q:'Which phrase describes directing energy continuously towards an end?',o:['facility of energy','application of energy','achievement of energy','occupation of energy'],a:1},
+{q:'Which noun emphasises sustained attention to a task until it is completed?',o:['assiduity','occupation','ease','achievement'],a:0},
+{q:'Which adjective describes someone who habitually applies themselves to work?',o:['industrious','expressive','achieved','occupational'],a:0}
+]};
+function renderCollocationQuiz(level){const area=document.getElementById(level==='b2'?'b2QuizArea':'b2plusQuizArea');area.innerHTML=collocationQuizzes[level].map((item,i)=>`<div class="exercise"><p><b>${i+1}. ${item.q}</b></p><div class="options">${item.o.map((opt,j)=>`<label><input type="radio" name="${level}q${i}" value="${j}"> <span>${String.fromCharCode(65+j)}. ${opt}</span></label>`).join('')}</div><div id="${level}qfb${i}" class="small" aria-live="polite"></div></div>`).join('')}
+function checkCollocationQuiz(level){let n=0;const items=collocationQuizzes[level];items.forEach((item,i)=>{const selected=document.querySelector(`input[name="${level}q${i}"]:checked`);const fb=document.getElementById(`${level}qfb${i}`);if(selected&&Number(selected.value)===item.a){n++;fb.textContent='Correct.';fb.className='small correct'}else{fb.textContent='Correct answer: '+item.o[item.a]+'.';fb.className='small incorrect'}});const id=level==='b2'?'b2QuizFeedback':'b2plusQuizFeedback';const el=document.getElementById(id);el.textContent=`Score: ${n}/${items.length}. `+(n===items.length?'Excellent work!':'Review the collocations and try again.');el.className='feedback '+(n===items.length?'correct':'incorrect')}
+function resetCollocationQuiz(level){document.querySelectorAll(`input[name^="${level}q"]`).forEach(x=>x.checked=false);collocationQuizzes[level].forEach((_,i)=>{const fb=document.getElementById(`${level}qfb${i}`);fb.textContent='';fb.className='small'});const id=level==='b2'?'b2QuizFeedback':'b2plusQuizFeedback';document.getElementById(id).textContent=''}
+renderCollocationQuiz('b2');renderCollocationQuiz('b2plus');
+
 
 // SET THIS to the deployed Google Apps Script Web App URL before publishing.
 const SUBMISSION_ENDPOINT = "https://script.google.com/macros/s/AKfycby8CiVt1YZZniSYBg7F_T1_-5-lWyRTVBAieCnj4LaR0rLCtM5KzpNNntaDjJijxIJi/exec";
@@ -135,7 +170,7 @@ function collectResponses(){
   const answers={};
   let fieldIndex=0;
   document.querySelectorAll('input, textarea, select').forEach((el)=>{
-    if(['studentCode','groupCode','submitBtn'].includes(el.id) || el.type==='button' || el.type==='submit') return;
+    if(['firstName','lastName','groupNumber','submitBtn'].includes(el.id) || el.type==='button' || el.type==='submit') return;
     fieldIndex++;
     const key=el.id || el.name || ('field_'+String(fieldIndex).padStart(3,'0'));
     answers[key]=(el.value||'').trim();
@@ -147,19 +182,37 @@ function collectResponses(){
   n=0; odds.forEach((x,i)=>{if(Number(document.getElementById('o'+i)?.value)===x[1] && norm(document.getElementById('oc'+i)?.value||'')===norm(x[2]))n++}); score.oddOneOut={score:n,max:6};
   n=0; repairs.forEach((x,i)=>{const v=norm(document.getElementById('r'+i)?.value||'');if(v===norm(x[1])||v.includes(norm(x[1])))n++}); score.collocationRepair={score:n,max:5};
   n=0; situations.forEach((x,i)=>{if(norm(document.getElementById('s'+i)?.value||'')===norm(x[1]))n++}); score.chooseComplete={score:n,max:6};
-  score.autoTotal={score:score.matching.score+score.gapFill.score+score.oddOneOut.score+score.collocationRepair.score+score.chooseComplete.score,max:33};
-  return {lesson:'Lesson 2 — Work and Study', studentCode:document.getElementById('studentCode').value.trim(), group:document.getElementById('groupCode').value.trim(), submittedAt:new Date().toISOString(), scores:score, answers:answers, userAgent:navigator.userAgent};
+  // Official automatic score excludes Odd One Out and SkELL.
+  score.autoTotal={
+    score:score.matching.score+score.gapFill.score+score.collocationRepair.score+score.chooseComplete.score,
+    max:27
+  };
+  score.autoPercentage=Math.round((score.autoTotal.score/score.autoTotal.max)*1000)/10;
+  ['b2','b2plus'].forEach(level=>{let quizScore=0;collocationQuizzes[level].forEach((item,i)=>{const selected=document.querySelector(`input[name=\"${level}q${i}\"]:checked`);if(selected&&Number(selected.value)===item.a)quizScore++});score[level+'CollocationTest']={score:quizScore,max:collocationQuizzes[level].length};});
+  return {
+    lesson:'Lesson 2 — Work and Study',
+    firstName:document.getElementById('firstName').value.trim(),
+    lastName:document.getElementById('lastName').value.trim(),
+    groupNumber:document.getElementById('groupNumber').value.trim(),
+    // Keep the legacy field populated so existing spreadsheet scripts remain compatible.
+    studentCode:[document.getElementById('lastName').value.trim(),document.getElementById('firstName').value.trim(),document.getElementById('groupNumber').value.trim()].join(' — '),
+    group:document.getElementById('groupNumber').value.trim(),
+    submittedAt:new Date().toISOString(),
+    scores:score,
+    answers:answers,
+    userAgent:navigator.userAgent
+  };
 }
 async function submitWork(){
  const status=document.getElementById('submitStatus'), btn=document.getElementById('submitBtn');
- const code=document.getElementById('studentCode').value.trim();
- if(!code){status.className='status err';status.textContent='Please enter your individual student code first.';document.getElementById('studentCode').focus();return;}
+ const requiredFields=[['firstName','Please enter your first name.'],['lastName','Please enter your surname.'],['groupNumber','Please enter your group number.']];
+ for(const [id,message] of requiredFields){const field=document.getElementById(id);if(!field.value.trim()){status.className='status err';status.textContent=message;field.focus();return;}}
  if(SUBMISSION_ENDPOINT.includes('PASTE_YOUR_GOOGLE_APPS_SCRIPT')){status.className='status warn';status.textContent='Submission is not configured yet. The teacher must paste the deployed Apps Script URL into SUBMISSION_ENDPOINT and republish the HTML.';return;}
  const payload=collectResponses(); btn.disabled=true; btn.textContent='Sending…'; status.className='status warn'; status.textContent='Sending your answers…';
  try{
    // text/plain avoids a CORS preflight; Apps Script receives and stores the JSON body.
    await fetch(SUBMISSION_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)});
-   status.className='status ok';status.textContent='Your submission request has been sent. Because the browser cannot read the server confirmation in this mode, please keep your student code and ask the teacher to confirm that your response appears in the spreadsheet.';
+   status.className='status ok';status.textContent='Your submission request has been sent. Because the browser cannot read the server confirmation in this mode, please keep your name and group details and ask the teacher to confirm that your response appears in the spreadsheet.';
    btn.textContent='Submission sent';
  }catch(e){status.className='status err';status.textContent='Could not send the answers. Check your internet connection and try again, or tell your teacher.';btn.disabled=false;btn.textContent='Try again';}
 }
